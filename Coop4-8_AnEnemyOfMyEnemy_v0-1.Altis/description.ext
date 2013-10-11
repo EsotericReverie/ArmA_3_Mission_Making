@@ -6,7 +6,7 @@
 class Header
 {
 	gameType = Coop;
-	minPlayers = 2;
+	minPlayers = 4;
 	maxPlayers = 8;
 };
 
@@ -15,8 +15,8 @@ class Header
 // F3 - Loading Screen
 // Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
 
-onLoadName = "Enemy of My Enemy, v.0.1 [CO:2-8]";
-onLoadMission = "Resistance fighters attempt to disable a AAF-controlled radio tower with IEDs to allow NATO forces to land on Altis without alerting the main body.";
+onLoadName = "Enemy of My Enemy, v.0.2 [CO:4-8]";
+onLoadMission = "Resistance fighters attempt to disable a AAF-controlled radio tower with IEDs to allow NATO forces to land on Altis without alerting the main body of AAF forces.";
 author = "EsotericReverie";
 loadScreen = "logo.paa";
 
@@ -103,7 +103,7 @@ class Params
                 title = "$STR_f_param_timeOfDay";
                 values[] = {0,1,2,3,4,5,6,7};
                 texts[] = {$STR_f_param_timeOfDay_Option0,$STR_f_param_timeOfDay_Option1,$STR_f_param_timeOfDay_Option2,$STR_f_param_timeOfDay_Option3,$STR_f_param_timeOfDay_Option4,$STR_f_param_timeOfDay_Option5,$STR_f_param_timeOfDay_Option6,$STR_f_param_timeOfDay_Option7};
-                default = 3;
+                default = 1;
                 code = "f_param_timeOfDay = %1";
         };
 
@@ -191,9 +191,9 @@ class CfgDebriefing
 {
 	class End1
 	{
-		title = "Ending #1";
-		subtitle = "";
-		description = "*** Insert debriefing #1 here. ***";
+		title = "Towers destroyed!";
+		subtitle = "A strike against the oppressors";
+		description = "We managed to strike a hard blow against the AAF scum in Kavala, taking out their communications with the rest of the AAF force. Now, NATO troops can move in in the dark of night, to help us clear the streets of the oppressors.<br/><br/>Good job, men!";
 		// pictureBackground = "";
 		// picture = "";
 		// pictureColor[] = {0.0,0.3,0.6,1};

@@ -77,28 +77,28 @@ f_respawnINIT = player addEventHandler ["killed", {_this execVM "init_onPlayerRe
 // F3 - F3 Folk ARPS Group IDs
 // Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
 
-f_script_setGroupIDs = [] execVM "f\common\folk_setGroupIDs.sqf";
+//f_script_setGroupIDs = [] execVM "f\common\folk_setGroupIDs.sqf";
 
 // ====================================================================================
 
 // F3 - Buddy Team Colours
 // Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
 
-f_script_setTeamColours = [] execVM "f\common\f_setTeamColours.sqf";
+//f_script_setTeamColours = [] execVM "f\common\f_setTeamColours.sqf";
 
 // ====================================================================================
 
 // F3 - Fireteam Member Markers
 // Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
 
-[] execVM "f\common\f_setlocalFTMemberMarkers.sqf";
+//[] execVM "f\common\f_setlocalFTMemberMarkers.sqf";
 
 // ====================================================================================
 
 // F3 - F3 Folk ARPS Group Markers
 // Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
 
-[] execVM "f\common\folk_setLocalGroupMarkers.sqf";
+//[] execVM "f\common\folk_setLocalGroupMarkers.sqf";
 
 // ====================================================================================
 
@@ -113,8 +113,8 @@ f_script_setLocalVars = [] execVM "f\common\f_setLocalVars.sqf";
 // F3 - Multiplayer Ending Controller
 // Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
 
-f_endSelected = -1;
-[] execVM "f\common\f_mpEndSetUp.sqf";
+// f_endSelected = -1;
+//[] execVM "f\common\f_mpEndSetUp.sqf";
 
 // ====================================================================================
 
@@ -185,10 +185,10 @@ f_endSelected = -1;
 // F3 - AI Skill Selector (coop)
 // Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
 
-// f_isFriendlyBLU = 1;
-// f_isFriendlyRES = 1;
-// f_isFriendlyOPF = 0;
-// f_isFriendlyCIV = 1;
+ f_isFriendlyBLU = 1;
+ f_isFriendlyRES = 1;
+ f_isFriendlyOPF = 0;
+ f_isFriendlyCIV = 1;
 // [] execVM "f\common\f_setAISkill.sqf";
 
 // ====================================================================================
@@ -219,7 +219,7 @@ f_endSelected = -1;
 // F3 - ORBAT Notes
 // Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
 
-[] execVM "f\common\f_orbatNotes.sqf";
+//[] execVM "f\common\f_orbatNotes.sqf";
 
 // ====================================================================================
 
