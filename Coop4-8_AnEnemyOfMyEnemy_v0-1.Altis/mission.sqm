@@ -1,0 +1,410 @@
+version=12;
+class Mission
+{
+	addOns[]=
+	{
+		"a3_map_stratis",
+		"A3_Characters_F_BLUFOR",
+		"A3_Boat_F_Boat_Transport_01",
+		"a3_characters_f_gamma",
+		"a3_map_altis",
+		"A3_Structures_F_Items_Vessels",
+		"A3_Soft_F_Offroad_01",
+		"A3_Modules_F_Sites"
+	};
+	addOnsAuto[]=
+	{
+		"a3_characters_f_gamma",
+		"A3_Characters_F_BLUFOR",
+		"A3_Modules_F_Sites",
+		"A3_Structures_F_Items_Vessels",
+		"A3_Soft_F_Offroad_01",
+		"a3_map_altis"
+	};
+	randomSeed=11823142;
+	class Intel
+	{
+		briefingName="Enemy of My Enemy [CO:4-8]";
+		overviewText="Resistance fighters try to disable a radio tower using IEDs, allowing NATO troops to land on Altis without alerting the main body of AAF forces.";
+		resistanceWest=0;
+		resistanceEast=1;
+		startWeather=0;
+		startWind=0;
+		forecastWeather=0.56;
+		forecastWind=0;
+		forecastWaves=0;
+		wavesForced=1;
+		windForced=1;
+		year=2035;
+		month=7;
+		day=6;
+		hour=23;
+		minute=15;
+		startFogDecay=0.0049333;
+		forecastFogDecay=0.0049333;
+	};
+	class Groups
+	{
+		items=2;
+		class Item0
+		{
+			side="WEST";
+			class Vehicles
+			{
+				items=2;
+				class Item0
+				{
+					position[]={5069.9058,27.663475,16664.66};
+					azimut=111.127;
+					id=0;
+					side="WEST";
+					vehicle="B_G_Soldier_M_F";
+					player="PLAYER COMMANDER";
+					leader=1;
+					skill=0.60000002;
+					text="player1";
+				};
+				class Item1
+				{
+					position[]={5076.6826,27.707571,16666.08};
+					azimut=212.73279;
+					id=1;
+					side="WEST";
+					vehicle="B_Soldier_F";
+					player="PLAY CDG";
+					skill=0.60000002;
+				};
+			};
+		};
+		class Item1
+		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={4568.3369,261.76843,15428.731};
+					class args
+					{
+						items=10;
+						class Item0
+						{
+							value="Green_army";
+							parentCls="Site_Independent";
+							typeName="faction";
+						};
+						class Item1
+						{
+							value="Military_Base";
+							parentCls="Site_Independent";
+							typeName="siteType";
+						};
+						class Item2
+						{
+							value="Magos Radio Station";
+							parentCls="Site_Independent";
+							typeName="description";
+						};
+						class Item3
+						{
+							value="ellipse";
+							parentCls="Site_Independent";
+							typeName="shape";
+						};
+						class Item4
+						{
+							value="100";
+							parentCls="Site_Independent";
+							typeName="axisA";
+						};
+						class Item5
+						{
+							value="100";
+							parentCls="Site_Independent";
+							typeName="axisB";
+						};
+						class Item6
+						{
+							value="No";
+							parentCls="Site_Independent";
+							typeName="interactive";
+						};
+						class Item7
+						{
+							value="Disabled";
+							parentCls="Site_Independent";
+							typeName="fastTravel";
+						};
+						class Item8
+						{
+							value="1";
+							parentCls="Site_Independent";
+							typeName="buildingOccupationIndex";
+						};
+						class Item9
+						{
+							value="TRUE";
+							parentCls="Site_Independent";
+							typeName="conditionOfPresence";
+						};
+					};
+					id=2;
+					side="LOGIC";
+					vehicle="Site_Independent";
+					leader=1;
+					lock="UNLOCKED";
+					skill=0.60000002;
+				};
+			};
+		};
+	};
+	class Vehicles
+	{
+		items=9;
+		class Item0
+		{
+			position[]={5080.3086,27.791292,16668.563};
+			azimut=-128.14429;
+			id=3;
+			side="EMPTY";
+			vehicle="Land_CanisterPlastic_F";
+			skill=0.60000002;
+			text="IED11";
+		};
+		class Item1
+		{
+			position[]={5082.5225,27.713518,16666.84};
+			azimut=-128.1443;
+			id=4;
+			side="EMPTY";
+			vehicle="Land_CanisterPlastic_F";
+			skill=0.60000002;
+			text="IED18";
+		};
+		class Item2
+		{
+			position[]={5080.9209,27.758741,16667.811};
+			azimut=-128.1443;
+			id=5;
+			side="EMPTY";
+			vehicle="Land_CanisterPlastic_F";
+			skill=0.60000002;
+			text="IED12";
+		};
+		class Item3
+		{
+			position[]={5081.4824,27.726393,16667.057};
+			azimut=-128.1443;
+			id=6;
+			side="EMPTY";
+			vehicle="Land_CanisterPlastic_F";
+			skill=0.60000002;
+			text="IED13";
+		};
+		class Item4
+		{
+			position[]={5082.0435,27.74407,16667.555};
+			azimut=-128.1443;
+			id=7;
+			side="EMPTY";
+			vehicle="Land_CanisterPlastic_F";
+			skill=0.60000002;
+			text="IED17";
+		};
+		class Item5
+		{
+			position[]={5081.5093,27.775431,16668.285};
+			azimut=-128.1443;
+			id=8;
+			side="EMPTY";
+			vehicle="Land_CanisterPlastic_F";
+			skill=0.60000002;
+			text="IED16";
+		};
+		class Item6
+		{
+			position[]={5080.9463,27.808661,16669.063};
+			azimut=-128.1443;
+			id=9;
+			side="EMPTY";
+			vehicle="Land_CanisterPlastic_F";
+			skill=0.60000002;
+			text="IED15";
+		};
+		class Item7
+		{
+			position[]={5081.9971,27.697893,16666.396};
+			azimut=-128.1443;
+			id=10;
+			side="EMPTY";
+			vehicle="Land_CanisterPlastic_F";
+			skill=0.60000002;
+			text="IED14";
+			syncId=0;
+			synchronizations[]={0};
+		};
+		class Item8
+		{
+			position[]={5075.3643,27.441441,16656.436};
+			azimut=189.3546;
+			id=11;
+			side="EMPTY";
+			vehicle="C_Offroad_01_F";
+			lock="UNLOCKED";
+			skill=0.60000002;
+			text="Pickup1";
+			init="IED11 attachTo [Pickup1, [0.31,-1,-0.3]]; IED12 attachTo [Pickup1,[0.28,-1.5,-0.3]]; IED13 attachTo [Pickup1, [0.35,-2.1,-0.3]]; IED14 attachTo [Pickup1, [0.32,-2.6,-0.3]]; IED15 attachTo [Pickup1, [-0.3,-1,-0.3]]; IED16 attachTo [Pickup1, [-0.33,-1.5,-0.3]]; IED17 attachTo [Pickup1, [-0.29,-2.04,-0.3]]; IED18 attachTo [Pickup1, [-0.3,-2.5,-0.3]]; ";
+		};
+	};
+	class Markers
+	{
+		items=3;
+		class Item0
+		{
+			position[]={4563.3833,264.36435,15393.566};
+			name="MarkerMagos";
+			type="Empty";
+		};
+		class Item1
+		{
+			position[]={5086.0801,33.475952,16661.613};
+			name="MarkerSafeHouse";
+			type="Empty";
+		};
+		class Item2
+		{
+			position[]={3544.1294,9.1828346,12952.835};
+			name="MarkerKavala";
+			type="Empty";
+		};
+	};
+	class Sensors
+	{
+		items=2;
+		class Item0
+		{
+			position[]={5082.8501,27.765892,16668.439};
+			a=0;
+			b=0;
+			angle=-84.470901;
+			activationBy="ALPHA";
+			repeating=1;
+			interruptable=1;
+			age="UNKNOWN";
+			text="Bomb trigger";
+			expActiv="{bomb = ""M_Mo_82mm_AT_LG"" createVehicle [(position _x select 0), (position _x select 1),0]; deleteVehicle _x} forEach [IED11,IED12,IED13,IED14,IED15,IED16,IED17,IED18]; {_x setDamage (1 - ((_x distance pickup1)-25)/40)} foreach nearestObjects [Pickup1, [], 200] ";
+			class Effects
+			{
+			};
+		};
+		class Item1
+		{
+			position[]={5067.9561,27.475889,16657.336};
+			a=0;
+			b=0;
+			repeating=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="player1 distance pickup1 > 50";
+			expActiv="1 setRadioMsg ""Activate bomb""";
+			expDesactiv="1 setRadioMsg ""NULL""";
+			class Effects
+			{
+			};
+		};
+	};
+};
+class Intro
+{
+	addOns[]=
+	{
+		"a3_map_stratis",
+		"a3_map_altis"
+	};
+	addOnsAuto[]=
+	{
+		"a3_map_altis"
+	};
+	randomSeed=8428644;
+	class Intel
+	{
+		timeOfChanges=1800.0002;
+		startWeather=0.30000001;
+		startWind=0.1;
+		startWaves=0.1;
+		forecastWeather=0.30000001;
+		forecastWind=0.1;
+		forecastWaves=0.1;
+		forecastLightnings=0.1;
+		year=2035;
+		month=7;
+		day=6;
+		hour=14;
+		minute=15;
+		startFogDecay=0.0049333;
+		forecastFogDecay=0.0049333;
+	};
+};
+class OutroWin
+{
+	addOns[]=
+	{
+		"a3_map_stratis",
+		"a3_map_altis"
+	};
+	addOnsAuto[]=
+	{
+		"a3_map_altis"
+	};
+	randomSeed=4674277;
+	class Intel
+	{
+		timeOfChanges=1800.0002;
+		startWeather=0.30000001;
+		startWind=0.1;
+		startWaves=0.1;
+		forecastWeather=0.30000001;
+		forecastWind=0.1;
+		forecastWaves=0.1;
+		forecastLightnings=0.1;
+		year=2035;
+		month=7;
+		day=6;
+		hour=14;
+		minute=15;
+		startFogDecay=0.0049333;
+		forecastFogDecay=0.0049333;
+	};
+};
+class OutroLoose
+{
+	addOns[]=
+	{
+		"a3_map_stratis",
+		"a3_map_altis"
+	};
+	addOnsAuto[]=
+	{
+		"a3_map_altis"
+	};
+	randomSeed=6586695;
+	class Intel
+	{
+		timeOfChanges=1800.0002;
+		startWeather=0.30000001;
+		startWind=0.1;
+		startWaves=0.1;
+		forecastWeather=0.30000001;
+		forecastWind=0.1;
+		forecastWaves=0.1;
+		forecastLightnings=0.1;
+		year=2035;
+		month=7;
+		day=6;
+		hour=14;
+		minute=15;
+		startFogDecay=0.0049333;
+		forecastFogDecay=0.0049333;
+	};
+};
