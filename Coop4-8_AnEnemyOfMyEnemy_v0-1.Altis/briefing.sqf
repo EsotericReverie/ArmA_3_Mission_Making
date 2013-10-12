@@ -40,7 +40,7 @@ if (_unitfaction != toLower (faction (leader group player))) then {_unitfaction 
 // The following block of code executes only if the player is in a BLUE slot; it
 // automatically includes a file which contains the appropriate briefing data.
 
-if (_unitfaction == "BLU_F") exitwith {
+if (_unitfaction == "BLU_F" || _unitfaction == "BLU_G_F") exitwith {
 
 #include "f\common\f_briefing_blue.sqf"
 
