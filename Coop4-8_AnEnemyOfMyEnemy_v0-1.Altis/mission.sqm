@@ -11,25 +11,37 @@ class Mission
 		"A3_Structures_F_Items_Vessels",
 		"A3_Soft_F_Offroad_01",
 		"A3_Characters_F_INDEP",
-		"A3_Soft_F_MRAP_03"
+		"A3_Soft_F_MRAP_03",
+		"A3_Modules_F_GroupModifiers",
+		"A3_Structures_F_Walls",
+		"A3_Modules_F_Intel",
+		"A3_Soft_F_SUV",
+		"A3_Soft_F_Quadbike",
+		"a3_soft_f_beta_quadbike"
 	};
 	addOnsAuto[]=
 	{
-		"a3_characters_f_gamma",
 		"A3_Characters_F_INDEP",
-		"A3_Characters_F_BLUFOR",
+		"a3_characters_f_gamma",
 		"A3_Soft_F_MRAP_03",
+		"A3_Modules_F_GroupModifiers",
+		"A3_Modules_F_Intel",
 		"A3_Structures_F_Items_Vessels",
 		"A3_Soft_F_Offroad_01",
+		"A3_Structures_F_Walls",
+		"A3_Soft_F_SUV",
+		"A3_Soft_F_Quadbike",
+		"a3_soft_f_beta_quadbike",
 		"a3_map_altis"
 	};
 	randomSeed=11823142;
 	class Intel
 	{
-		briefingName="Enemy of My Enemy [CO:4-8]";
+		briefingName="Enemy of My Enemy [CO:4]";
 		overviewText="Resistance fighters try to disable a radio tower using IEDs, allowing NATO troops to land on Altis without alerting the main body of AAF forces.";
 		resistanceEast=1;
 		startWeather=0;
+		startFog=0.20999999;
 		startWind=0;
 		forecastWeather=0.56;
 		forecastWind=0;
@@ -46,29 +58,8 @@ class Mission
 	};
 	class Groups
 	{
-		items=8;
+		items=12;
 		class Item0
-		{
-			side="WEST";
-			class Vehicles
-			{
-				items=1;
-				class Item0
-				{
-					position[]={5070.9326,27.416824,16655.074};
-					azimut=496.12115;
-					id=0;
-					side="WEST";
-					vehicle="B_G_Soldier_M_F";
-					player="PLAYER COMMANDER";
-					leader=1;
-					skill=0.60000002;
-					text="player1";
-					init="this setcaptive true; ResistanceFighters = group this";
-				};
-			};
-		};
-		class Item1
 		{
 			side="GUER";
 			class Vehicles
@@ -78,7 +69,7 @@ class Mission
 				{
 					position[]={5259.9678,90.748665,16008.982};
 					azimut=21.741283;
-					id=1;
+					id=0;
 					side="GUER";
 					vehicle="I_Soldier_GL_F";
 					leader=1;
@@ -91,7 +82,7 @@ class Mission
 				{
 					position[]={5262.7598,92.345703,16002.487};
 					azimut=21.741283;
-					id=2;
+					id=1;
 					side="GUER";
 					vehicle="I_soldier_F";
 					skill=0.2;
@@ -164,26 +155,88 @@ class Mission
 				};
 			};
 		};
-		class Item2
+		class Item1
 		{
 			side="WEST";
 			class Vehicles
 			{
-				items=1;
+				items=6;
 				class Item0
 				{
-					position[]={5076.6826,27.707571,16666.08};
-					azimut=212.73279;
+					position[]={5076.0483,27.468878,16658.572};
+					azimut=-182.089;
+					id=2;
+					side="WEST";
+					vehicle="B_G_Soldier_SL_F";
+					player="PLAYER COMMANDER";
+					leader=1;
+					rank="SERGEANT";
+					skill=0.60000002;
+					init="ResistanceFighters = group this; this addItem ""NVGoggles""";
+					syncId=0;
+					synchronizations[]={1,2};
+				};
+				class Item1
+				{
+					position[]={5070.5054,27.540482,16658.826};
+					azimut=179.814;
 					id=3;
 					side="WEST";
-					vehicle="B_Soldier_F";
+					vehicle="B_G_Soldier_M_F";
 					player="PLAY CDG";
-					leader=1;
+					rank="CORPORAL";
 					skill=0.60000002;
+					init="this addItem ""muzzle_snds_M""";
+				};
+				class Item2
+				{
+					position[]={5066.6494,27.635941,16662.85};
+					azimut=168.50301;
+					id=4;
+					side="WEST";
+					vehicle="B_G_Soldier_AR_F";
+					player="PLAY CDG";
+					rank="SERGEANT";
+					skill=0.60000002;
+					init="this addItem ""Binocular""";
+				};
+				class Item3
+				{
+					position[]={5073.0645,27.581911,16662.26};
+					azimut=-182.089;
+					id=5;
+					side="WEST";
+					vehicle="B_G_Soldier_LAT_F";
+					player="PLAY CDG";
+					rank="SERGEANT";
+					skill=0.60000002;
+					init="removeBackpack this; this addItem ""muzzle_snds_M""";
+				};
+				class Item4
+				{
+					position[]={5070.3794,27.75135,16666.859};
+					azimut=179.814;
+					id=6;
+					side="WEST";
+					vehicle="B_G_Soldier_M_F";
+					rank="CORPORAL";
+					skill=0.60000002;
+					init="this addItem ""muzzle_snds_M""";
+				};
+				class Item5
+				{
+					position[]={5066.2095,27.809082,16667.057};
+					azimut=168.50301;
+					id=7;
+					side="WEST";
+					vehicle="B_G_Soldier_AR_F";
+					rank="SERGEANT";
+					skill=0.60000002;
+					init="this addItem ""Binocular""";
 				};
 			};
 		};
-		class Item3
+		class Item2
 		{
 			side="GUER";
 			class Vehicles
@@ -193,7 +246,7 @@ class Mission
 				{
 					position[]={5081.3667,74.016945,16143.156};
 					azimut=80.341652;
-					id=4;
+					id=8;
 					side="GUER";
 					vehicle="I_Soldier_AT_F";
 					skill=0.46666664;
@@ -202,7 +255,7 @@ class Mission
 				{
 					position[]={5084.5103,73.777153,16145.02};
 					azimut=80.341698;
-					id=5;
+					id=9;
 					side="GUER";
 					vehicle="I_Soldier_SL_F";
 					leader=1;
@@ -215,7 +268,7 @@ class Mission
 				{
 					position[]={5078.1968,73.958916,16145.882};
 					azimut=80.341652;
-					id=6;
+					id=10;
 					side="GUER";
 					vehicle="I_Soldier_AAT_F";
 					skill=0.33333331;
@@ -224,7 +277,7 @@ class Mission
 				{
 					position[]={5084.1665,73.532936,16150.805};
 					azimut=437.35999;
-					id=7;
+					id=11;
 					side="GUER";
 					vehicle="I_crew_F";
 					lock="LOCKED";
@@ -234,7 +287,7 @@ class Mission
 			};
 			class Waypoints
 			{
-				items=1;
+				items=2;
 				class Item0
 				{
 					position[]={5087.3271,73.783455,16144.401};
@@ -242,6 +295,21 @@ class Mission
 					combatMode="WHITE";
 					speed="LIMITED";
 					combat="SAFE";
+					synchronizations[]={9};
+					class Effects
+					{
+					};
+					showWP="NEVER";
+					syncId=5;
+				};
+				class Item1
+				{
+					position[]={5074.4971,27.292416,16650.871};
+					id=47;
+					type="DESTROY";
+					combatMode="RED";
+					speed="FULL";
+					combat="AWARE";
 					class Effects
 					{
 					};
@@ -249,7 +317,7 @@ class Mission
 				};
 			};
 		};
-		class Item4
+		class Item3
 		{
 			side="GUER";
 			class Vehicles
@@ -259,7 +327,7 @@ class Mission
 				{
 					position[]={5105.918,73.254631,16166.941};
 					azimut=97.491699;
-					id=8;
+					id=12;
 					side="GUER";
 					vehicle="I_Soldier_AR_F";
 					leader=1;
@@ -270,7 +338,7 @@ class Mission
 				class Item1
 				{
 					position[]={5104.3613,73.114555,16169.915};
-					id=9;
+					id=13;
 					side="GUER";
 					vehicle="I_Soldier_AAR_F";
 					skill=0.33333331;
@@ -280,7 +348,7 @@ class Mission
 				{
 					position[]={5097.0215,73.299133,16159.293};
 					azimut=181.871;
-					id=10;
+					id=14;
 					side="GUER";
 					vehicle="I_Soldier_A_F";
 					skill=0.2;
@@ -288,7 +356,7 @@ class Mission
 				};
 			};
 		};
-		class Item5
+		class Item4
 		{
 			side="GUER";
 			class Vehicles
@@ -298,7 +366,7 @@ class Mission
 				{
 					position[]={4614.8115,244.2708,15479.12};
 					azimut=-2.7800801;
-					id=11;
+					id=15;
 					side="GUER";
 					vehicle="I_Soldier_AR_F";
 					leader=1;
@@ -310,7 +378,7 @@ class Mission
 				{
 					position[]={4618.124,244.35822,15476.952};
 					azimut=69.869202;
-					id=12;
+					id=16;
 					side="GUER";
 					vehicle="I_Soldier_AT_F";
 					lock="UNLOCKED";
@@ -328,17 +396,17 @@ class Mission
 					type="SENTRY";
 					speed="LIMITED";
 					combat="AWARE";
-					synchronizations[]={3};
+					synchronizations[]={9};
 					class Effects
 					{
 					};
 					showWP="NEVER";
-					syncId=1;
+					syncId=6;
 				};
 				class Item1
 				{
-					position[]={5075.0103,27.306101,16650.857};
-					id=32;
+					position[]={5074.4971,27.292416,16650.871};
+					id=47;
 					type="DESTROY";
 					combatMode="RED";
 					speed="FULL";
@@ -350,7 +418,7 @@ class Mission
 				};
 			};
 		};
-		class Item6
+		class Item5
 		{
 			side="GUER";
 			class Vehicles
@@ -360,7 +428,7 @@ class Mission
 				{
 					position[]={4380.0293,97.034966,15828.238};
 					azimut=-94.354599;
-					id=13;
+					id=17;
 					side="GUER";
 					vehicle="I_MRAP_03_gmg_F";
 					leader=1;
@@ -372,7 +440,7 @@ class Mission
 				{
 					position[]={4391.9292,99.219666,15843.184};
 					azimut=-94.354584;
-					id=14;
+					id=18;
 					side="GUER";
 					vehicle="I_Soldier_AR_F";
 					rank="CORPORAL";
@@ -382,7 +450,7 @@ class Mission
 				{
 					position[]={4394.0591,100.87592,15815.268};
 					azimut=-94.354584;
-					id=15;
+					id=19;
 					side="GUER";
 					vehicle="I_Soldier_AT_F";
 					skill=0.2;
@@ -405,7 +473,7 @@ class Mission
 				};
 			};
 		};
-		class Item7
+		class Item6
 		{
 			side="GUER";
 			class Vehicles
@@ -414,7 +482,7 @@ class Mission
 				class Item0
 				{
 					position[]={4538.5239,264.00418,15406.478};
-					id=16;
+					id=20;
 					side="GUER";
 					vehicle="I_Soldier_SL_F";
 					leader=1;
@@ -426,7 +494,7 @@ class Mission
 				{
 					position[]={4550.189,264.59186,15394.383};
 					azimut=167.67567;
-					id=17;
+					id=21;
 					side="GUER";
 					vehicle="I_soldier_TL_F";
 					rank="SERGEANT";
@@ -435,7 +503,7 @@ class Mission
 				class Item2
 				{
 					position[]={4534.4165,264.34326,15405.443};
-					id=18;
+					id=22;
 					side="GUER";
 					vehicle="I_soldier_AR_F";
 					rank="CORPORAL";
@@ -445,7 +513,7 @@ class Mission
 				{
 					position[]={4551.6787,263.81921,15397.591};
 					azimut=167.67567;
-					id=19;
+					id=23;
 					side="GUER";
 					vehicle="I_soldier_AR_F";
 					skill=0.2;
@@ -454,7 +522,7 @@ class Mission
 				{
 					position[]={4526.2583,264.16812,15412.463};
 					azimut=-36.774296;
-					id=20;
+					id=24;
 					side="GUER";
 					vehicle="I_soldier_AAR_F";
 					skill=0.2;
@@ -463,7 +531,7 @@ class Mission
 				{
 					position[]={4545.7803,263.63998,15405.108};
 					azimut=1.9024251;
-					id=21;
+					id=25;
 					side="GUER";
 					vehicle="I_soldier_LAT_F";
 					rank="CORPORAL";
@@ -473,7 +541,7 @@ class Mission
 				{
 					position[]={4524.7993,264.3121,15408.722};
 					azimut=-36.774296;
-					id=22;
+					id=26;
 					side="GUER";
 					vehicle="I_medic_F";
 					skill=0.2;
@@ -482,7 +550,7 @@ class Mission
 				{
 					position[]={4550.0044,263.83423,15398.361};
 					azimut=208.83467;
-					id=23;
+					id=27;
 					side="GUER";
 					vehicle="I_soldier_A_F";
 					skill=0.2;
@@ -498,12 +566,12 @@ class Mission
 					combatMode="WHITE";
 					speed="LIMITED";
 					combat="CARELESS";
-					synchronizations[]={3};
+					synchronizations[]={9};
 					class Effects
 					{
 					};
 					showWP="NEVER";
-					syncId=2;
+					syncId=7;
 				};
 				class Item1
 				{
@@ -520,105 +588,393 @@ class Mission
 				};
 			};
 		};
+		class Item7
+		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={5079.2061,27.55126,16661.527};
+					class args
+					{
+						items=4;
+						class Item0
+						{
+							value="CompanyAlpha";
+							parentCls="ModuleGroupID";
+							typeName="Company";
+						};
+						class Item1
+						{
+							value="Platoon1";
+							parentCls="ModuleGroupID";
+							typeName="Platoon";
+						};
+						class Item2
+						{
+							value="Squad1";
+							parentCls="ModuleGroupID";
+							typeName="Squad";
+						};
+						class Item3
+						{
+							value="Resistance";
+							parentCls="ModuleGroupID";
+							typeName="Custom";
+						};
+					};
+					id=28;
+					side="LOGIC";
+					vehicle="ModuleGroupID";
+					leader=1;
+					lock="UNLOCKED";
+					skill=0.60000002;
+					syncId=1;
+					synchronizations[]={0};
+				};
+			};
+		};
+		class Item8
+		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={4570.6113,264.48694,15388.801};
+					class args
+					{
+						items=7;
+						class Item0
+						{
+							value="1";
+							parentCls="ModuleTaskCreate_F";
+							typeName="Owner";
+						};
+						class Item1
+						{
+							value="TaskInitial";
+							parentCls="ModuleTaskCreate_F";
+							typeName="ID";
+						};
+						class Item2
+						{
+							value="Destroy the radio tower";
+							parentCls="ModuleTaskCreate_F";
+							typeName="Title";
+						};
+						class Item3
+						{
+							value="Drive the bomb from the <marker name=MarkerSafeHouse>safe house</marker> to the summit of <marker name=MarkerMagosa>mount Magosa</marker> and destroy both of the radio towers.";
+							parentCls="ModuleTaskCreate_F";
+							typeName="Description";
+						};
+						class Item4
+						{
+							value="";
+							parentCls="ModuleTaskCreate_F";
+							typeName="Marker";
+						};
+						class Item5
+						{
+							value="1";
+							parentCls="ModuleTaskCreate_F";
+							typeName="Destination";
+						};
+						class Item6
+						{
+							value="ASSIGNED";
+							parentCls="ModuleTaskCreate_F";
+							typeName="State";
+						};
+					};
+					id=29;
+					side="LOGIC";
+					vehicle="ModuleTaskCreate_F";
+					leader=1;
+					lock="UNLOCKED";
+					skill=0.60000002;
+					syncId=2;
+					synchronizations[]={4,3,0};
+				};
+			};
+		};
+		class Item9
+		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					presenceCondition="RadioTower1Destroyed and RadioTower2Destroyed ";
+					position[]={4574.1616,263.96286,15384.235};
+					class args
+					{
+						items=1;
+						class Item0
+						{
+							value="SUCCEEDED";
+							parentCls="ModuleTaskSetState_F";
+							typeName="State";
+						};
+					};
+					id=30;
+					side="LOGIC";
+					vehicle="ModuleTaskSetState_F";
+					leader=1;
+					lock="UNLOCKED";
+					skill=0.60000002;
+					init="hint ""Both towers destroyed. Well done!""";
+					description="Succeed if both towers destroyed";
+					syncId=3;
+					synchronizations[]={3,2};
+				};
+			};
+		};
+		class Item10
+		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					presenceCondition="!alive Pickup1";
+					position[]={4575.1504,263.81076,15388.763};
+					class args
+					{
+						items=1;
+						class Item0
+						{
+							value="FAILED";
+							parentCls="ModuleTaskSetState_F";
+							typeName="State";
+						};
+					};
+					id=31;
+					side="LOGIC";
+					vehicle="ModuleTaskSetState_F";
+					leader=1;
+					lock="UNLOCKED";
+					skill=0.60000002;
+					init="hint ""Both towers destroyed. Well done!""";
+					description="Fail if truck destroyed";
+					syncId=4;
+					synchronizations[]={4,2};
+				};
+			};
+		};
+		class Item11
+		{
+			side="GUER";
+			class Vehicles
+			{
+				items=8;
+				class Item0
+				{
+					position[]={5095.7949,105.17683,15681.468};
+					azimut=41.6805;
+					id=32;
+					side="GUER";
+					vehicle="I_Soldier_SL_F";
+					leader=1;
+					rank="SERGEANT";
+					skill=0.46666664;
+					init="Reserves = group this";
+				};
+				class Item1
+				{
+					position[]={5096.2041,104.43338,15674.409};
+					azimut=41.680531;
+					id=33;
+					side="GUER";
+					vehicle="I_soldier_AR_F";
+					rank="SERGEANT";
+					skill=0.46666664;
+				};
+				class Item2
+				{
+					position[]={5088.7378,105.05518,15681.06};
+					azimut=41.680531;
+					id=34;
+					side="GUER";
+					vehicle="I_soldier_AAR_F";
+					rank="CORPORAL";
+					skill=0.33333331;
+				};
+				class Item3
+				{
+					position[]={5096.6152,103.7634,15667.35};
+					azimut=41.680531;
+					id=35;
+					side="GUER";
+					vehicle="I_soldier_AT_F";
+					rank="SERGEANT";
+					skill=0.46666664;
+				};
+				class Item4
+				{
+					position[]={5081.6782,105.01961,15680.648};
+					azimut=41.6805;
+					id=36;
+					side="GUER";
+					vehicle="I_Soldier_AAT_F";
+					rank="CORPORAL";
+					skill=0.33333331;
+					init="this moveInDriver ReserveCar2";
+				};
+				class Item5
+				{
+					position[]={5097.0244,102.91329,15660.291};
+					azimut=41.680531;
+					id=37;
+					side="GUER";
+					vehicle="I_soldier_A_F";
+					skill=0.2;
+				};
+				class Item6
+				{
+					position[]={5074.6177,105.06931,15680.237};
+					azimut=41.6805;
+					id=38;
+					side="GUER";
+					vehicle="I_soldier_F";
+					skill=0.2;
+					init="this moveInDriver ReserveCar1";
+				};
+				class Item7
+				{
+					position[]={5097.4331,102.24491,15653.229};
+					azimut=41.680531;
+					id=39;
+					side="GUER";
+					vehicle="I_medic_F";
+					skill=0.2;
+				};
+			};
+			class Waypoints
+			{
+				items=2;
+				class Item0
+				{
+					position[]={5106.5747,105.2059,15681.943};
+					type="DISMISS";
+					combatMode="GREEN";
+					speed="LIMITED";
+					combat="CARELESS";
+					synchronizations[]={9};
+					class Effects
+					{
+					};
+					showWP="NEVER";
+					syncId=8;
+				};
+				class Item1
+				{
+					position[]={5074.4971,27.292416,16650.871};
+					id=47;
+					type="DESTROY";
+					combatMode="RED";
+					formation="LINE";
+					speed="FULL";
+					combat="AWARE";
+					class Effects
+					{
+					};
+					showWP="NEVER";
+				};
+			};
+		};
 	};
 	class Vehicles
 	{
-		items=10;
+		items=16;
 		class Item0
 		{
-			position[]={5080.3086,27.791292,16668.563};
+			position[]={5079.8018,27.802475,16668.791};
 			azimut=-128.144;
-			id=24;
+			id=40;
 			side="EMPTY";
 			vehicle="Land_CanisterPlastic_F";
 			skill=0.60000002;
 			text="IED11";
-			init="BombActivated = false; mph = this addMPEventHandler [""mphit"", {hint ""hit""; BombActivated = true;}]; h = this addEventHandler [""hitPart"", {hint ""hit""; BombActivated = true;}];";
+			init="BombActivated = false; this addEventHandler [""HandleDamage"", {_box = _this select 0;  _damage = _this select 2;  _source = _this select 3;      _ammoName = _this select 4; _box setDamage (getDammage _box) + _damage; player globalchat format [""%1 was damaged for %2 by %3, using %4. Total damage is %5"", _box ,_Damage, _source, _ammoName, getDammage _box];     ;}];;";
 		};
 		class Item1
 		{
-			position[]={5082.5225,27.713518,16666.84};
+			position[]={5082.9531,27.69656,16666.459};
 			azimut=-128.144;
-			id=25;
+			id=41;
 			side="EMPTY";
 			vehicle="Land_CanisterPlastic_F";
 			skill=0.60000002;
 			text="IED18";
-			init="mph = this addMPEventHandler [""mphit"", {BombActivated = true;}]; h = this addEventHandler [""hit"", {BombActivated = true;}];";
+			init="h = this addEventHandler [""handleDamage"", {hint ""hit""; BombActivated = true;}];";
 		};
 		class Item2
 		{
-			position[]={5080.9209,27.758741,16667.811};
+			position[]={5080.5918,27.760057,16667.811};
 			azimut=-128.144;
-			id=26;
+			id=42;
 			side="EMPTY";
 			vehicle="Land_CanisterPlastic_F";
 			skill=0.60000002;
 			text="IED12";
-			init="mph = this addMPEventHandler [""mphit"", {hint ""hit""; BombActivated = true;}]; h = this addEventHandler [""hit"", {hint ""hit""; BombActivated = true;}];";
+			init="this addEventHandler [""HandleDamage"", {_box = _this select 0;  _damage = _this select 2;  _source = _this select 3;      _ammoName = _this select 4; _box setDamage (getDammage _box) + _damage; player globalchat format [""%1 was damaged for %2 by %3, using %4. Total damage is %5"", _box ,_Damage, _source, _ammoName, getDammage _box];     ;}];;";
 		};
 		class Item3
 		{
-			position[]={5081.4824,27.726393,16667.057};
+			position[]={5081.3809,27.717646,16666.828};
 			azimut=-128.144;
-			id=27;
+			id=43;
 			side="EMPTY";
 			vehicle="Land_CanisterPlastic_F";
 			skill=0.60000002;
 			text="IED13";
-			init="mph = this addMPEventHandler [""mphit"", {hint ""hit""; BombActivated = true;}]; h = this addEventHandler [""hit"", {hint ""hit""; BombActivated = true;}];";
+			init="this addEventHandler [""HandleDamage"", {_box = _this select 0;  _damage = _this select 2;  _source = _this select 3;      _ammoName = _this select 4; _box setDamage (getDammage _box) + _damage; player globalchat format [""%1 was damaged for %2 by %3, using %4. Total damage is %5"", _box ,_Damage, _source, _ammoName, getDammage _box];     ;}];;";
 		};
 		class Item4
 		{
-			position[]={5082.0435,27.74407,16667.555};
+			position[]={5082.2207,27.738308,16667.43};
 			azimut=-128.144;
-			id=28;
+			id=44;
 			side="EMPTY";
 			vehicle="Land_CanisterPlastic_F";
 			skill=0.60000002;
 			text="IED17";
-			init="mph = this addMPEventHandler [""mphit"", {BombActivated = true;}]; h = this addEventHandler [""hit"", {BombActivated = true;}];";
+			init="h = this addEventHandler [""handleDamage"", {hint ""hit""; BombActivated = true;}];";
 		};
 		class Item5
 		{
-			position[]={5081.5093,27.775431,16668.285};
+			position[]={5081.4331,27.781815,16668.438};
 			azimut=-128.144;
-			id=29;
+			id=45;
 			side="EMPTY";
 			vehicle="Land_CanisterPlastic_F";
 			skill=0.60000002;
 			text="IED16";
-			init="mph = this addMPEventHandler [""mphit"", {BombActivated = true;}]; h = this addEventHandler [""hit"", {BombActivated = true;}];";
+			init="h = this addEventHandler [""handleDamage"", {hint ""hit""; BombActivated = true;}];";
 		};
 		class Item6
 		{
-			position[]={5080.9463,27.808661,16669.063};
+			position[]={5080.6421,27.823616,16669.416};
 			azimut=-128.144;
-			id=30;
+			id=46;
 			side="EMPTY";
 			vehicle="Land_CanisterPlastic_F";
 			skill=0.60000002;
 			text="IED15";
-			init="mph = this addMPEventHandler [""mphit"", {BombActivated = true;}]; h = this addEventHandler [""hit"", {BombActivated = true;}];";
+			init="h = this addEventHandler [""handleDamage"", {hint ""hit""; BombActivated = true;}];";
 		};
 		class Item7
 		{
-			position[]={5081.9971,27.697893,16666.396};
-			azimut=-128.144;
-			id=31;
-			side="EMPTY";
-			vehicle="Land_CanisterPlastic_F";
-			skill=0.60000002;
-			text="IED14";
-			init="mph = this addMPEventHandler [""mphit"", {hint ""hit""; BombActivated = true;}]; h = this addEventHandler [""hit"", {hint ""hit""; BombActivated = true;}];";
-			syncId=0;
-			synchronizations[]={0};
-		};
-		class Item8
-		{
-			position[]={5075.0103,27.306101,16650.857};
-			azimut=564.70325;
-			id=32;
+			position[]={5074.4971,27.292416,16650.871};
+			azimut=564.22064;
+			id=47;
 			side="EMPTY";
 			vehicle="C_Offroad_01_F";
 			lock="UNLOCKED";
@@ -626,21 +982,92 @@ class Mission
 			text="Pickup1";
 			init="BombTruckSpotted = false; IED11 attachTo [Pickup1, [0.31,-1,-0.3]]; IED12 attachTo [Pickup1,[0.28,-1.5,-0.3]]; IED13 attachTo [Pickup1, [0.35,-2.1,-0.3]]; IED14 attachTo [Pickup1, [0.32,-2.6,-0.3]]; IED15 attachTo [Pickup1, [-0.3,-1,-0.3]]; IED16 attachTo [Pickup1, [-0.33,-1.5,-0.3]]; IED17 attachTo [Pickup1, [-0.29,-2.04,-0.3]]; IED18 attachTo [Pickup1, [-0.3,-2.5,-0.3]]; ";
 		};
-		class Item9
+		class Item8
 		{
 			position[]={5087.0063,73.512573,16150.078};
 			azimut=177.354;
-			id=33;
+			id=48;
 			side="EMPTY";
 			vehicle="I_MRAP_03_hmg_F";
 			lock="UNLOCKED";
 			skill=0.46666664;
 			text="RoadblockCar";
 		};
+		class Item9
+		{
+			position[]={5075.3589,28.058035,16674.689};
+			azimut=-128.144;
+			id=49;
+			side="EMPTY";
+			vehicle="Land_CanisterPlastic_F";
+			skill=0.60000002;
+			init="this addEventHandler [     ""HandleDamage"",     {hint ""gotcha!""}];";
+		};
+		class Item10
+		{
+			position[]={5081.1318,26.11808,16627.459};
+			azimut=-40.032608;
+			id=50;
+			side="EMPTY";
+			vehicle="Land_CncBarrierMedium_F";
+			skill=0.60000002;
+		};
+		class Item11
+		{
+			position[]={5077.7817,104.40179,15675.878};
+			azimut=397.12073;
+			id=51;
+			side="EMPTY";
+			vehicle="I_MRAP_03_hmg_F";
+			lock="UNLOCKED";
+			skill=0.60000002;
+			text="ReserveCar1";
+		};
+		class Item12
+		{
+			position[]={5093.395,105.52905,15688.249};
+			azimut=499.89999;
+			id=52;
+			side="EMPTY";
+			vehicle="I_MRAP_03_hmg_F";
+			lock="UNLOCKED";
+			skill=0.60000002;
+			text="ReserveCar2";
+		};
+		class Item13
+		{
+			position[]={5082.1221,27.674616,16665.826};
+			azimut=-128.144;
+			id=53;
+			side="EMPTY";
+			vehicle="Land_CanisterPlastic_F";
+			skill=0.60000002;
+			text="IED14";
+			init="this addEventHandler [""HandleDamage"", {_box = _this select 0;  _damage = _this select 2;  _source = _this select 3;      _ammoName = _this select 4; _box setDamage (getDammage _box) + _damage; player globalchat format [""%1 was damaged for %2 by %3, using %4. Total damage is %5"", _box ,_Damage, _source, _ammoName, getDammage _box];     ;}];;";
+		};
+		class Item14
+		{
+			position[]={5068.1328,27.429146,16656.402};
+			azimut=141.50662;
+			id=54;
+			side="EMPTY";
+			vehicle="C_SUV_01_F";
+			lock="UNLOCKED";
+			skill=0.60000002;
+		};
+		class Item15
+		{
+			position[]={5083.5645,27.188534,16643.689};
+			azimut=280.6517;
+			id=55;
+			side="EMPTY";
+			vehicle="C_Quadbike_01_F";
+			skill=0.60000002;
+		};
 	};
 	class Markers
 	{
-		items=3;
+		items=4;
 		class Item0
 		{
 			position[]={4563.3833,264.36435,15393.566};
@@ -659,13 +1086,21 @@ class Mission
 			name="MarkerKavala";
 			type="Empty";
 		};
+		class Item3
+		{
+			position[]={5087.7827,80.006409,16134.696};
+			name="MarkerERoadblock";
+			text="Roadblock";
+			type="hd_warning";
+			colorName="ColorIndependent";
+		};
 	};
 	class Sensors
 	{
-		items=14;
+		items=23;
 		class Item0
 		{
-			position[]={5068.3613,28.010458,16671.943};
+			position[]={5076.376,27.667219,16665.129};
 			a=0;
 			b=0;
 			angle=-84.470901;
@@ -680,13 +1115,13 @@ class Mission
 		};
 		class Item1
 		{
-			position[]={5065.8398,28.149784,16674.135};
+			position[]={5074.4785,27.766106,16667.318};
 			a=0;
 			b=0;
 			interruptable=1;
 			age="UNKNOWN";
 			text="Enable radio trigger";
-			expCond="!BombActivated and player1 distance Pickup1 > 50";
+			expCond="!BombActivated";
 			expActiv="1 setRadioMsg ""Activate bomb""";
 			expDesactiv="1 setRadioMsg ""NULL""";
 			class Effects
@@ -718,8 +1153,8 @@ class Mission
 			type="SWITCH";
 			age="UNKNOWN";
 			text="Truck spotted by eastern roadblock";
-			expCond="!BombTruckSpotted and EasternRoadblockCrew knowsAbout Pickup1 > 1 and alive RoadblockLeader and Pickup1 distance leader EasternRoadblockCrew < 100";
-			expActiv="BombTruckSpotted = true; hint ""Bomb truck spotted by eastern roadblock crew!""; nul = EasternRoadblockCrew fireAtTarget [Pickup1]; ";
+			expCond="!BombTruckSpotted and EasternRoadblockCrew knowsAbout Pickup1 > 1 and alive RoadblockLeader and Pickup1 distance leader EasternRoadblockCrew < 150";
+			expActiv="player setVariable [""BombTruckSpotted"", true ,true]; hint ""Bomb truck spotted by eastern roadblock crew!""; nul = EasternRoadblockCrew fireAtTarget [Pickup1]; ";
 			class Effects
 			{
 			};
@@ -748,7 +1183,7 @@ class Mission
 		};
 		class Item6
 		{
-			position[]={4525.9272,254.09903,15476.621};
+			position[]={4573.4683,245.32536,15528.85};
 			a=0;
 			b=0;
 			timeoutMin=1;
@@ -761,9 +1196,11 @@ class Mission
 			expActiv="Resistance setFriend [West, 0];  West setFriend [Resistance, 0];hint ""AAF forces alerted!""";
 			class Effects
 			{
+				sound="Alarm_Independent";
+				track="LeadTrack01_F";
 			};
-			synchronizations[]={2,1};
-			syncId=3;
+			synchronizations[]={7,6,8,5};
+			syncId=9;
 		};
 		class Item7
 		{
@@ -778,8 +1215,8 @@ class Mission
 			type="SWITCH";
 			age="UNKNOWN";
 			text="Bomb spotted by patrol";
-			expCond="Patrol knowsAbout Pickup1 > 1 and ({alive _x} count (units Patrol)) > 0 and Pickup1 distance leader Patrol < 100";
-			expActiv="BombTruckSpotted = true; hint ""Bomb truck spotted by patrol!""";
+			expCond="Patrol knowsAbout Pickup1 > 1 and ({alive _x} count (units Patrol)) > 0 and Pickup1 distance leader Patrol < 150";
+			expActiv="player setVariable [""BombTruckSpotted"", true ,true]; hint ""Bomb truck spotted by patrol!""";
 			class Effects
 			{
 			};
@@ -796,7 +1233,7 @@ class Mission
 			type="SWITCH";
 			age="UNKNOWN";
 			text="Bomb spotted by sentries";
-			expCond="(OPSentry knowsAbout Pickup1) > 1 and ({alive _x} count (units OPSentry)) > 0 and Pickup1 distance leader OPSentry < 100";
+			expCond="(OPSentry knowsAbout Pickup1) > 1 and ({alive _x} count (units OPSentry)) > 0 and Pickup1 distance leader OPSentry < 200";
 			expActiv="BombTruckSpotted = true; hint ""Bomb truck spotted by obs.post sentries!""; {null = _x fireAtTarget [Pickup1]} foreach units OPSentry";
 			class Effects
 			{
@@ -851,14 +1288,14 @@ class Mission
 		};
 		class Item12
 		{
-			position[]={5065.2485,27.922604,16668.828};
+			position[]={5077.166,27.271515,16649.004};
 			a=0;
 			b=0;
 			interruptable=1;
 			type="SWITCH";
 			age="UNKNOWN";
 			text="Truck too damaged";
-			expCond="getDammage Pickup1 > 0.2";
+			expCond="getDammage Pickup1 > 0.04";
 			expActiv="BombActivated = true";
 			class Effects
 			{
@@ -866,15 +1303,160 @@ class Mission
 		};
 		class Item13
 		{
-			position[]={5082.9785,27.884703,16672.201};
+			position[]={5083.2905,27.794418,16669.496};
 			a=0;
 			b=0;
 			interruptable=1;
 			type="SWITCH";
 			age="UNKNOWN";
 			text="IEDs damaged";
-			expCond="IedDamageThreshold = 0.1; getDammage IED11 > IedDamageThreshold or getDammage IED12 > IedDamageThreshold or getDammage IED13 > IedDamageThreshold or getDammage IED14 > IedDamageThreshold or getDammage IED15 > IedDamageThreshold or getDammage IED16 > IedDamageThreshold or getDammage IED17 > IedDamageThreshold or getDammage IED18 > IedDamageThreshold";
+			expCond="IedDamageThreshold = 0; getDammage IED11 > IedDamageThreshold or getDammage IED12 > IedDamageThreshold or getDammage IED13 > IedDamageThreshold or getDammage IED14 > IedDamageThreshold or getDammage IED15 > IedDamageThreshold or getDammage IED16 > IedDamageThreshold or getDammage IED17 > IedDamageThreshold or getDammage IED18 > IedDamageThreshold";
 			expActiv="BombActivated";
+			class Effects
+			{
+			};
+		};
+		class Item14
+		{
+			position[]={4554.5181,265.64575,15380.749};
+			a=5;
+			b=5;
+			activationBy="STATIC";
+			activationType="NOT PRESENT";
+			interruptable=1;
+			age="UNKNOWN";
+			idStatic=1069853;
+			idObject=-1073431779;
+			expActiv="RadioTower2Destroyed = true";
+			class Effects
+			{
+			};
+		};
+		class Item15
+		{
+			position[]={4587.252,261.85461,15400.678};
+			a=5;
+			b=5;
+			activationBy="STATIC";
+			activationType="NOT PRESENT";
+			interruptable=1;
+			age="UNKNOWN";
+			idStatic=1069851;
+			idObject=-1071332581;
+			expActiv="RadioTower1Destroyed = true";
+			class Effects
+			{
+			};
+		};
+		class Item16
+		{
+			position[]={5084.8994,103.39757,15666.321};
+			a=0;
+			b=0;
+			angle=137.144;
+			timeoutMin=5;
+			timeoutMid=5;
+			timeoutMax=5;
+			interruptable=1;
+			type="SWITCH";
+			age="UNKNOWN";
+			text="Bomb spotted by reserves";
+			expCond="Reserves knowsAbout Pickup1 > 1 and ({alive _x} count (units Reserves)) > 0 and Pickup1 distance leader Reserves < 220";
+			expActiv="player setVariable [""BombTruckSpotted"", true ,true]; hint ""Bomb truck spotted by reserves!""";
+			class Effects
+			{
+			};
+		};
+		class Item17
+		{
+			position[]={4563.2915,263.87335,15366.433};
+			a=0;
+			b=0;
+			interruptable=1;
+			age="UNKNOWN";
+			text="Win outr";
+			expCond="RadioTower1Destroyed and RadioTower2Destroyed";
+			class Effects
+			{
+				track="LeadTrack03_F";
+				titleType="TEXT";
+				titleEffect="BLACK OUT";
+				title="Job done! Communications have been cut off.";
+			};
+		};
+		class Item18
+		{
+			position[]={4563.4805,262.70435,15362.358};
+			a=0;
+			b=0;
+			timeoutMin=9;
+			timeoutMid=9;
+			timeoutMax=9;
+			age="UNKNOWN";
+			text="Win";
+			expCond="RadioTower1Destroyed and RadioTower2Destroyed";
+			expActiv="""end1"" call BIS_fnc_endMission;";
+			class Effects
+			{
+				track="LeadTrack03_F";
+				titleEffect="BLACK";
+			};
+		};
+		class Item19
+		{
+			position[]={4571.0669,263.03497,15366.338};
+			a=0;
+			b=0;
+			interruptable=1;
+			age="UNKNOWN";
+			text="Lose outro";
+			expCond="!alive Pickup1 and (!RadioTower1Destroyed or !RadioTower2Destroyed)";
+			class Effects
+			{
+				titleType="TEXT";
+				titleEffect="WHITE OUT";
+				title="Blast! The bomb didn't make it to the towers.";
+			};
+		};
+		class Item20
+		{
+			position[]={4571.0664,261.86194,15362.447};
+			a=0;
+			b=0;
+			timeoutMin=9;
+			timeoutMid=9;
+			timeoutMax=9;
+			age="UNKNOWN";
+			text="Lose";
+			expCond="!alive Pickup1 and (!RadioTower1Destroyed or !RadioTower2Destroyed)";
+			expActiv="""LOSER"" call BIS_fnc_failMission;";
+			class Effects
+			{
+				track="AmbientTrack01_F";
+			};
+		};
+		class Item21
+		{
+			position[]={4509.5762,245.74748,15491.074};
+			timeoutMin=30;
+			timeoutMid=30;
+			timeoutMax=30;
+			age="UNKNOWN";
+			expCond="BombTruckSpotted";
+			class Effects
+			{
+				track="$STOP$";
+			};
+		};
+		class Item22
+		{
+			position[]={5114.8203,102.74873,15663.365};
+			a=200;
+			b=200;
+			activationBy="WEST";
+			activationType="GUER D";
+			interruptable=1;
+			age="UNKNOWN";
 			class Effects
 			{
 			};
