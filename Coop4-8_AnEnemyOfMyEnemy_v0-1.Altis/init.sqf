@@ -186,7 +186,7 @@ f_script_setLocalVars = [] execVM "f\common\f_setLocalVars.sqf";
 // Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
 
  f_isFriendlyBLU = 1;
- f_isFriendlyRES = 1;
+ f_isFriendlyRES = 0;
  f_isFriendlyOPF = 0;
  f_isFriendlyCIV = 1;
 // [] execVM "f\common\f_setAISkill.sqf";
