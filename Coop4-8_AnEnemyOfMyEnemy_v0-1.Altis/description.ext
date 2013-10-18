@@ -7,7 +7,7 @@ class Header
 {
 	gameType = Coop;
 	minPlayers = 4;
-	maxPlayers = 8;
+	maxPlayers = 6;
 };
 
 // ============================================================================================
@@ -15,7 +15,7 @@ class Header
 // F3 - Loading Screen
 // Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
 
-onLoadName = "Enemy of My Enemy, v.0.2 [CO:4-8]";
+onLoadName = "Enemy of My Enemy, v.0.5 [CO:4-6]";
 onLoadMission = "Resistance fighters attempt to disable a AAF-controlled radio tower with IEDs to allow NATO forces to land on Altis without alerting the main body of AAF forces.";
 author = "EsotericReverie";
 loadScreen = "logo.paa";
@@ -57,7 +57,7 @@ class Params
                 title = "$STR_f_param_debugMode";
                 values[] = {0,1};
                 texts[] = {"Off","On"};
-                default = 0;
+                default = 1;
                 code = "f_var_debugMode = %1";
         };
 
@@ -103,7 +103,7 @@ class Params
                 title = "$STR_f_param_timeOfDay";
                 values[] = {0,1,2,3,4,5,6,7};
                 texts[] = {$STR_f_param_timeOfDay_Option0,$STR_f_param_timeOfDay_Option1,$STR_f_param_timeOfDay_Option2,$STR_f_param_timeOfDay_Option3,$STR_f_param_timeOfDay_Option4,$STR_f_param_timeOfDay_Option5,$STR_f_param_timeOfDay_Option6,$STR_f_param_timeOfDay_Option7};
-                default = 1;
+                default = 7;
                 code = "f_param_timeOfDay = %1";
         };
 
@@ -282,3 +282,79 @@ class CfgFunctions
 };
 
 // ============================================================================================
+// IDENTITIES:
+// Available nameSounds:
+// Anthis
+// Costa
+// Dimitirou
+// Elias
+// Gekas
+// Kouris
+// Leventis
+// Markos
+// Nikas
+// Nicolo
+// Panas
+// Petros
+// Rosi
+// Samaras
+// Stavrou
+// Thanos
+// Vega
+class CfgIdentities
+{
+    class Resistance_Anthis
+    {
+        name = "Anthis";
+        nameSound = "Anthis";
+        face="GreekHead_A3_01";
+		glasses="None";
+		speaker="Male01GRE";
+		pitch=1.1;
+    };
+	class Resistance_Panas
+    {
+        name = "Panas";
+        nameSound = "Panas";
+        face="GreekHead_A3_02";
+		glasses="None";
+		speaker="Male02GRE";
+		pitch=1.2;
+    };
+	class Resistance_Kouris
+    {
+        name = "Kouris";
+        nameSound = "Kouris";
+        face="GreekHead_A3_03";
+		glasses="None";
+		speaker="Male03GRE";
+		pitch=1.0;
+    };
+	class Resistance_Stavrou
+    {
+        name = "Stavrou";
+        nameSound = "Stavrou";
+        face="GreekHead_A3_04";
+		glasses="None";
+		speaker="Male04GRE";
+		pitch=1.1;
+    };
+	class Resistance_Petros
+    {
+        name = "Petros";
+        nameSound = "Petros";
+        face="AfricanHead_01";
+		glasses="None";
+		speaker="Male02GRE";
+		pitch=1.0;
+    };
+	class Resistance_Markos
+    {
+        name = "Markos";
+        nameSound = "Markos";
+        face="AfricanHead_02";
+		glasses="None";
+		speaker="Male01GRE";
+		pitch=0.93;
+    };
+};
