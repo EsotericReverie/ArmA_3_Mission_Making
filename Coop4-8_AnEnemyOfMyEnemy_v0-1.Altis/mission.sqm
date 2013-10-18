@@ -18,7 +18,7 @@ class Mission
 		"A3_Soft_F_SUV",
 		"A3_Soft_F_Quadbike",
 		"a3_soft_f_beta_quadbike",
-		"A3_Armor_F_APC_Wheeled_03"
+		"A3_Soft_F_Truck"
 	};
 	addOnsAuto[]=
 	{
@@ -27,11 +27,10 @@ class Mission
 		"A3_Modules_F_GroupModifiers",
 		"A3_Modules_F_Intel",
 		"a3_characters_f_gamma",
-		"A3_Armor_F_APC_Wheeled_03",
 		"A3_Structures_F_Items_Vessels",
 		"A3_Soft_F_Offroad_01",
 		"A3_Structures_F_Walls",
-		"A3_Soft_F_SUV",
+		"A3_Soft_F_Truck",
 		"A3_Soft_F_Quadbike",
 		"a3_soft_f_beta_quadbike",
 		"a3_map_altis"
@@ -39,7 +38,7 @@ class Mission
 	randomSeed=11823142;
 	class Intel
 	{
-		briefingName="Enemy of My Enemy [CO:4]";
+		briefingName="Enemy of My Enemy [CO:4-6]";
 		overviewText="Resistance fighters try to disable a radio tower using IEDs, allowing NATO troops to land on Altis without alerting the main body of AAF forces.";
 		resistanceWest=0;
 		resistanceEast=1;
@@ -61,7 +60,7 @@ class Mission
 	};
 	class Groups
 	{
-		items=14;
+		items=20;
 		class Item0
 		{
 			side="GUER";
@@ -80,14 +79,17 @@ class Mission
 					skill=0.33333331;
 					text="PatrolLeader";
 					init="Patrol = group this;";
+					syncId=0;
+					synchronizations[]={12};
 				};
 				class Item1
 				{
 					position[]={5262.7598,92.345703,16002.487};
-					azimut=21.741283;
+					azimut=21.741301;
 					id=1;
 					side="GUER";
 					vehicle="I_soldier_F";
+					player="PLAY CDG";
 					skill=0.2;
 				};
 			};
@@ -186,14 +188,17 @@ class Mission
 					skill=0.46666664;
 					text="RoadblockLeader";
 					init="EasternRoadblockCrew = group this; ";
+					syncId=1;
+					synchronizations[]={13};
 				};
 				class Item2
 				{
 					position[]={5078.1968,73.958916,16145.882};
-					azimut=80.341652;
+					azimut=80.341698;
 					id=4;
 					side="GUER";
 					vehicle="I_Soldier_AAT_F";
+					player="PLAY CDG";
 					skill=0.33333331;
 				};
 				class Item3
@@ -280,8 +285,9 @@ class Mission
 					vehicle="I_Soldier_AR_F";
 					leader=1;
 					lock="UNLOCKED";
+					rank="CORPORAL";
 					skill=0.60000002;
-					init="OPSentry = group this; this setPos [4614.7,15478.6,4.5]; this disableAI ""MOVE""; this setUnitPos ""UP"";";
+					init="OPSentry = group this; this setPos [4614.7,15478.6,4.5]; ";
 				};
 				class Item1
 				{
@@ -292,7 +298,7 @@ class Mission
 					vehicle="I_Soldier_AT_F";
 					lock="UNLOCKED";
 					skill=0.60000002;
-					init="this setPos [4617.72,15477,4.5]; this disableAI ""MOVE""; this setUnitPos ""UP""";
+					init="this setPos [4617.72,15477,4.5]; this disableAI ""MOVE""; this setUnitPos ""UP""; this setVariable [""SpottingDistance"", 0]";
 				};
 			};
 			class Waypoints
@@ -326,9 +332,12 @@ class Mission
 					side="GUER";
 					vehicle="I_MRAP_03_gmg_F";
 					leader=1;
+					lock="UNLOCKED";
 					rank="SERGEANT";
 					skill=0.46666664;
 					init="WesternRoadBlock = group this;";
+					syncId=2;
+					synchronizations[]={14};
 				};
 				class Item1
 				{
@@ -343,10 +352,11 @@ class Mission
 				class Item2
 				{
 					position[]={4394.0591,100.87592,15815.268};
-					azimut=-94.354584;
+					azimut=-94.354599;
 					id=13;
 					side="GUER";
 					vehicle="I_Soldier_AT_F";
+					player="PLAY CDG";
 					skill=0.2;
 				};
 			};
@@ -383,6 +393,8 @@ class Mission
 					rank="SERGEANT";
 					skill=0.46666664;
 					init="TowerCrew = group this;";
+					syncId=3;
+					synchronizations[]={15};
 				};
 				class Item1
 				{
@@ -424,10 +436,10 @@ class Mission
 				class Item5
 				{
 					position[]={4545.7803,263.63998,15405.108};
-					azimut=1.9024251;
+					azimut=1.9024301;
 					id=19;
 					side="GUER";
-					vehicle="I_soldier_LAT_F";
+					vehicle="I_Soldier_LAT_F";
 					rank="CORPORAL";
 					skill=0.33333331;
 				};
@@ -475,13 +487,13 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={5079.2061,27.55126,16661.527};
+					position[]={5081.7754,27.440359,16658.023};
 					class args
 					{
 						items=4;
 						class Item0
 						{
-							value="CompanyAlpha";
+							value="CompanyZulu";
 							parentCls="ModuleGroupID";
 							typeName="Company";
 						};
@@ -510,8 +522,8 @@ class Mission
 					leader=1;
 					lock="UNLOCKED";
 					skill=0.60000002;
-					syncId=0;
-					synchronizations[]={4};
+					syncId=4;
+					synchronizations[]={9};
 				};
 			};
 		};
@@ -580,8 +592,8 @@ class Mission
 					{
 						"MarkerMagos"
 					};
-					syncId=1;
-					synchronizations[]={3,2,4};
+					syncId=5;
+					synchronizations[]={7,6,9};
 				};
 			};
 		};
@@ -613,8 +625,8 @@ class Mission
 					skill=0.60000002;
 					init="hint ""Both towers destroyed. Well done!""";
 					description="Succeed if both towers destroyed";
-					syncId=2;
-					synchronizations[]={2,1};
+					syncId=6;
+					synchronizations[]={6,5};
 				};
 			};
 		};
@@ -646,8 +658,8 @@ class Mission
 					skill=0.60000002;
 					init="hint ""Both towers destroyed. Well done!""";
 					description="Fail if truck destroyed";
-					syncId=3;
-					synchronizations[]={3,1};
+					syncId=7;
+					synchronizations[]={7,5};
 				};
 			};
 		};
@@ -672,6 +684,8 @@ class Mission
 						"MarkerReservesPos1"
 					};
 					init="Reserves = group this";
+					syncId=8;
+					synchronizations[]={11};
 				};
 				class Item1
 				{
@@ -696,10 +710,11 @@ class Mission
 				class Item3
 				{
 					position[]={5096.6152,103.7634,15667.35};
-					azimut=41.680531;
+					azimut=41.6805;
 					id=29;
 					side="GUER";
-					vehicle="I_soldier_AT_F";
+					vehicle="I_Soldier_AT_F";
+					player="PLAY CDG";
 					rank="SERGEANT";
 					skill=0.46666664;
 				};
@@ -749,10 +764,10 @@ class Mission
 				class Item0
 				{
 					position[]={5106.5747,105.2059,15681.943};
-					type="DISMISS";
+					type="SENTRY";
 					combatMode="GREEN";
 					speed="LIMITED";
-					combat="CARELESS";
+					combat="SAFE";
 					class Effects
 					{
 					};
@@ -765,11 +780,11 @@ class Mission
 			side="WEST";
 			class Vehicles
 			{
-				items=7;
+				items=6;
 				class Item0
 				{
-					position[]={5076.0483,27.468878,16658.572};
-					azimut=-182.089;
+					position[]={5077.4087,27.473978,16658.93};
+					azimut=-45.350101;
 					id=34;
 					side="WEST";
 					vehicle="B_G_Soldier_SL_F";
@@ -777,81 +792,85 @@ class Mission
 					leader=1;
 					rank="SERGEANT";
 					skill=0.60000002;
-					init="ResistanceFighters = group this; this addItem ""NVGoggles""; this addItem ""Rangefinder""; EnemyWeaponSpottingDistance = 100;";
-					syncId=4;
-					synchronizations[]={0,1};
+					text="Petros";
+					init="ResistanceFighters = group this; this addItem ""NVGoggles""; this assignItem ""NVGoggles""; this addItem ""Rangefinder""; this assignItem ""Rangefinder""; this setVariable [""EnemyWeaponSpottingDistance"", 100]; this setIdentity ""Resistance_Petros""";
+					description="Petros - cell leader";
+					syncId=9;
+					synchronizations[]={4,5};
 				};
 				class Item1
 				{
-					position[]={5081.103,27.453159,16658.41};
-					azimut=-124.157;
+					position[]={5072.0659,27.526955,16659.086};
+					azimut=90.507004;
 					special="NONE";
 					id=35;
 					side="WEST";
 					vehicle="B_G_Soldier_M_F";
-					player="PLAYER COMMANDER";
+					player="PLAY CDG";
+					rank="CORPORAL";
 					skill=0.60000002;
-					init="this setVariable [""SpottingDistance"", 150]; this addEventHandler [""fire"", {hint """"}]";
+					text="Anthis";
+					init="this addItem ""muzzle_snds_M""; this assignItem ""muzzle_snds_M""; this setIdentity ""Resistance_Anthis""";
+					description="Anthis";
 				};
 				class Item2
 				{
-					position[]={5070.5054,27.540482,16658.826};
-					azimut=179.814;
+					position[]={5077.7173,27.586151,16662.6};
+					azimut=-175.645;
+					special="NONE";
 					id=36;
-					side="WEST";
-					vehicle="B_G_Soldier_M_F";
-					player="PLAY CDG";
-					rank="CORPORAL";
-					skill=0.60000002;
-					init="this addItem ""muzzle_snds_M""";
-				};
-				class Item3
-				{
-					position[]={5073.0645,27.581911,16662.26};
-					azimut=-182.089;
-					id=37;
 					side="WEST";
 					vehicle="B_G_Soldier_LAT_F";
 					player="PLAY CDG";
-					rank="SERGEANT";
+					rank="CORPORAL";
 					skill=0.60000002;
-					init="removeBackpack this; this addItem ""muzzle_snds_M""";
+					text="Stavrou";
+					init="removeBackpack this; this addItem ""muzzle_snds_M""; this assignItem ""muzzle_snds_M"";  this setIdentity ""Resistance_Stavrou""";
+					description="Stavrou";
 				};
-				class Item4
+				class Item3
 				{
-					position[]={5066.2412,27.628864,16662.441};
-					azimut=168.50301;
-					id=38;
+					position[]={5069.5059,27.602324,16661.549};
+					azimut=115.862;
+					special="NONE";
+					id=37;
 					side="WEST";
 					vehicle="B_G_Soldier_AR_F";
 					player="PLAY CDG";
-					rank="SERGEANT";
 					skill=0.60000002;
-					init="this addItem ""Binocular""";
+					text="Kouris";
+					init="this addItem ""Binocular""; this assignItem ""Binocular""; this setIdentity ""Resistance_Kouris"";";
+					description="Kouris";
 				};
-				class Item5
+				class Item4
 				{
-					position[]={5070.9043,27.735342,16666.512};
-					azimut=179.814;
-					id=39;
+					position[]={5072.8975,27.684666,16665.42};
+					azimut=141.22701;
+					special="NONE";
+					id=38;
 					side="WEST";
 					vehicle="B_G_Soldier_M_F";
 					player="PLAY CDG";
 					rank="CORPORAL";
 					skill=0.60000002;
-					init="this addItem ""muzzle_snds_M""";
+					text="Markos";
+					init="this addItem ""muzzle_snds_M""; this assignItem ""muzzle_snds_M""; this setIdentity ""Resistance_Markos""";
+					description="Markos";
 				};
-				class Item6
+				class Item5
 				{
-					position[]={5066.2095,27.809082,16667.057};
-					azimut=168.50301;
-					id=40;
+					position[]={5069.8765,27.658024,16664.385};
+					azimut=124.939;
+					special="NONE";
+					id=39;
 					side="WEST";
 					vehicle="B_G_Soldier_AR_F";
 					player="PLAY CDG";
 					rank="SERGEANT";
 					skill=0.60000002;
-					init="this addItem ""Binocular""";
+					text="Panas";
+					init="this addItem ""Binocular""; this assignItem ""Binocular""; this setIdentity ""Resistance_Panas""";
+					description="Panas";
 				};
 			};
 		};
@@ -864,7 +883,7 @@ class Mission
 				class Item0
 				{
 					position[]={5569.0078,20.838774,14856.794};
-					id=41;
+					id=40;
 					side="GUER";
 					vehicle="I_MRAP_03_gmg_F";
 					leader=1;
@@ -877,11 +896,13 @@ class Mission
 						"MarkerMotResPos3"
 					};
 					init="MotorizedReserves = group this";
+					syncId=10;
+					synchronizations[]={16};
 				};
 				class Item1
 				{
 					position[]={5583.0078,20.941334,14843.794};
-					id=42;
+					id=41;
 					side="GUER";
 					vehicle="I_Soldier_AR_F";
 					rank="CORPORAL";
@@ -890,117 +911,331 @@ class Mission
 				class Item2
 				{
 					position[]={5555.0078,20.353603,14843.794};
-					id=43;
+					id=42;
 					side="GUER";
 					vehicle="I_Soldier_AT_F";
+					player="PLAY CDG";
 					skill=0.2;
 				};
 			};
 		};
 		class Item13
 		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={5088.686,104.19014,15672.495};
+					class args
+					{
+						items=4;
+						class Item0
+						{
+							value="CompanyAlpha";
+							parentCls="ModuleGroupID";
+							typeName="Company";
+						};
+						class Item1
+						{
+							value="Platoon1";
+							parentCls="ModuleGroupID";
+							typeName="Platoon";
+						};
+						class Item2
+						{
+							value="Squad1";
+							parentCls="ModuleGroupID";
+							typeName="Squad";
+						};
+						class Item3
+						{
+							value="Reserves";
+							parentCls="ModuleGroupID";
+							typeName="Custom";
+						};
+					};
+					id=43;
+					side="LOGIC";
+					vehicle="ModuleGroupID";
+					leader=1;
+					lock="UNLOCKED";
+					skill=0.60000002;
+					syncId=11;
+					synchronizations[]={8};
+				};
+			};
+		};
+		class Item14
+		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={5257.7046,90.849625,16003.967};
+					class args
+					{
+						items=4;
+						class Item0
+						{
+							value="CompanyAlpha";
+							parentCls="ModuleGroupID";
+							typeName="Company";
+						};
+						class Item1
+						{
+							value="Platoon1";
+							parentCls="ModuleGroupID";
+							typeName="Platoon";
+						};
+						class Item2
+						{
+							value="Squad1";
+							parentCls="ModuleGroupID";
+							typeName="Squad";
+						};
+						class Item3
+						{
+							value="Patrol";
+							parentCls="ModuleGroupID";
+							typeName="Custom";
+						};
+					};
+					id=44;
+					side="LOGIC";
+					vehicle="ModuleGroupID";
+					leader=1;
+					lock="UNLOCKED";
+					skill=0.60000002;
+					syncId=12;
+					synchronizations[]={0};
+				};
+			};
+		};
+		class Item15
+		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={5080.0498,73.637329,16149.186};
+					class args
+					{
+						items=4;
+						class Item0
+						{
+							value="CompanyAlpha";
+							parentCls="ModuleGroupID";
+							typeName="Company";
+						};
+						class Item1
+						{
+							value="Platoon1";
+							parentCls="ModuleGroupID";
+							typeName="Platoon";
+						};
+						class Item2
+						{
+							value="Squad1";
+							parentCls="ModuleGroupID";
+							typeName="Squad";
+						};
+						class Item3
+						{
+							value="EasternRoadBlockCrew";
+							parentCls="ModuleGroupID";
+							typeName="Custom";
+						};
+					};
+					id=45;
+					side="LOGIC";
+					vehicle="ModuleGroupID";
+					leader=1;
+					lock="UNLOCKED";
+					skill=0.60000002;
+					syncId=13;
+					synchronizations[]={1};
+				};
+			};
+		};
+		class Item16
+		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={4389.2271,98.748131,15829.153};
+					class args
+					{
+						items=4;
+						class Item0
+						{
+							value="CompanyAlpha";
+							parentCls="ModuleGroupID";
+							typeName="Company";
+						};
+						class Item1
+						{
+							value="Platoon1";
+							parentCls="ModuleGroupID";
+							typeName="Platoon";
+						};
+						class Item2
+						{
+							value="Squad1";
+							parentCls="ModuleGroupID";
+							typeName="Squad";
+						};
+						class Item3
+						{
+							value="WesternRoadblockCrew";
+							parentCls="ModuleGroupID";
+							typeName="Custom";
+						};
+					};
+					id=46;
+					side="LOGIC";
+					vehicle="ModuleGroupID";
+					leader=1;
+					lock="UNLOCKED";
+					skill=0.60000002;
+					syncId=14;
+					synchronizations[]={2};
+				};
+			};
+		};
+		class Item17
+		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={4538.0586,264.06656,15402.974};
+					class args
+					{
+						items=4;
+						class Item0
+						{
+							value="CompanyAlpha";
+							parentCls="ModuleGroupID";
+							typeName="Company";
+						};
+						class Item1
+						{
+							value="Platoon1";
+							parentCls="ModuleGroupID";
+							typeName="Platoon";
+						};
+						class Item2
+						{
+							value="Squad1";
+							parentCls="ModuleGroupID";
+							typeName="Squad";
+						};
+						class Item3
+						{
+							value="TowerCrew";
+							parentCls="ModuleGroupID";
+							typeName="Custom";
+						};
+					};
+					id=47;
+					side="LOGIC";
+					vehicle="ModuleGroupID";
+					leader=1;
+					lock="UNLOCKED";
+					skill=0.60000002;
+					syncId=15;
+					synchronizations[]={3};
+				};
+			};
+		};
+		class Item18
+		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={5569.96,20.604324,14839.709};
+					class args
+					{
+						items=4;
+						class Item0
+						{
+							value="CompanyZulu";
+							parentCls="ModuleGroupID";
+							typeName="Company";
+						};
+						class Item1
+						{
+							value="Platoon1";
+							parentCls="ModuleGroupID";
+							typeName="Platoon";
+						};
+						class Item2
+						{
+							value="Squad1";
+							parentCls="ModuleGroupID";
+							typeName="Squad";
+						};
+						class Item3
+						{
+							value="Motorized Reserves";
+							parentCls="ModuleGroupID";
+							typeName="Custom";
+						};
+					};
+					id=48;
+					side="LOGIC";
+					vehicle="ModuleGroupID";
+					leader=1;
+					lock="UNLOCKED";
+					skill=0.60000002;
+					syncId=16;
+					synchronizations[]={10};
+				};
+			};
+		};
+		class Item19
+		{
 			side="GUER";
 			class Vehicles
 			{
-				items=9;
+				items=1;
 				class Item0
 				{
-					position[]={5486.7842,117.52349,17388.748};
-					azimut=216.40163;
-					id=44;
-					side="GUER";
-					vehicle="I_soldier_SL_F";
-					leader=1;
-					rank="SERGEANT";
-					skill=0.46666664;
-				};
-				class Item1
-				{
-					position[]={5493.7808,117.73939,17389.807};
-					azimut=216.40163;
-					id=45;
-					side="GUER";
-					vehicle="I_medic_F";
-					skill=0.2;
-				};
-				class Item2
-				{
-					position[]={5494.8418,117.4872,17382.82};
-					azimut=216.40163;
-					id=46;
-					side="GUER";
-					vehicle="I_soldier_TL_F";
-					rank="SERGEANT";
-					skill=0.46666664;
-				};
-				class Item3
-				{
-					position[]={5490.8086,117.42422,17385.779};
-					azimut=216.40163;
-					id=47;
-					side="GUER";
-					vehicle="I_APC_Wheeled_03_cannon_F";
-					rank="SERGEANT";
-					skill=0.46666664;
-				};
-				class Item4
-				{
-					position[]={5489.7544,117.68259,17392.775};
-					azimut=216.40163;
-					id=48;
-					side="GUER";
-					vehicle="I_soldier_AR_F";
-					rank="CORPORAL";
-					skill=0.33333331;
-				};
-				class Item5
-				{
-					position[]={5492.7183,117.96992,17396.795};
-					azimut=216.40163;
+					position[]={4597.5581,239.2226,15518.272};
+					azimut=137.22591;
 					id=49;
 					side="GUER";
-					vehicle="I_soldier_AAR_F";
-					skill=0.2;
-				};
-				class Item6
-				{
-					position[]={5496.749,118.02505,17393.834};
-					azimut=216.40163;
-					id=50;
-					side="GUER";
-					vehicle="I_soldier_F";
-					skill=0.2;
-				};
-				class Item7
-				{
-					position[]={5500.771,118.05132,17390.867};
-					azimut=216.40163;
-					id=51;
-					side="GUER";
-					vehicle="I_soldier_LAT_F";
-					rank="CORPORAL";
-					skill=0.33333331;
-				};
-				class Item8
-				{
-					position[]={5497.8027,117.79345,17386.838};
-					azimut=216.40163;
-					id=52;
-					side="GUER";
-					vehicle="I_soldier_AR_F";
-					skill=0.2;
+					vehicle="I_Soldier_AT_F";
+					player="PLAYER COMMANDER";
+					leader=1;
+					lock="UNLOCKED";
+					skill=0.60000002;
 				};
 			};
 		};
 	};
 	class Vehicles
 	{
-		items=16;
+		items=19;
 		class Item0
 		{
 			position[]={5079.8018,27.802475,16668.791};
 			azimut=-128.144;
-			id=53;
+			id=50;
 			side="EMPTY";
 			vehicle="Land_CanisterPlastic_F";
 			skill=0.60000002;
@@ -1011,7 +1246,7 @@ class Mission
 		{
 			position[]={5082.9531,27.69656,16666.459};
 			azimut=-128.144;
-			id=54;
+			id=51;
 			side="EMPTY";
 			vehicle="Land_CanisterPlastic_F";
 			skill=0.60000002;
@@ -1022,7 +1257,7 @@ class Mission
 		{
 			position[]={5080.5918,27.760057,16667.811};
 			azimut=-128.144;
-			id=55;
+			id=52;
 			side="EMPTY";
 			vehicle="Land_CanisterPlastic_F";
 			skill=0.60000002;
@@ -1033,7 +1268,7 @@ class Mission
 		{
 			position[]={5081.3809,27.717646,16666.828};
 			azimut=-128.144;
-			id=56;
+			id=53;
 			side="EMPTY";
 			vehicle="Land_CanisterPlastic_F";
 			skill=0.60000002;
@@ -1044,7 +1279,7 @@ class Mission
 		{
 			position[]={5082.2207,27.738308,16667.43};
 			azimut=-128.144;
-			id=57;
+			id=54;
 			side="EMPTY";
 			vehicle="Land_CanisterPlastic_F";
 			skill=0.60000002;
@@ -1055,7 +1290,7 @@ class Mission
 		{
 			position[]={5081.4331,27.781815,16668.438};
 			azimut=-128.144;
-			id=58;
+			id=55;
 			side="EMPTY";
 			vehicle="Land_CanisterPlastic_F";
 			skill=0.60000002;
@@ -1066,7 +1301,7 @@ class Mission
 		{
 			position[]={5080.6421,27.823616,16669.416};
 			azimut=-128.144;
-			id=59;
+			id=56;
 			side="EMPTY";
 			vehicle="Land_CanisterPlastic_F";
 			skill=0.60000002;
@@ -1075,21 +1310,21 @@ class Mission
 		};
 		class Item7
 		{
-			position[]={5074.4971,27.292416,16650.871};
+			position[]={5074.2471,27.285013,16650.863};
 			azimut=564.22101;
-			id=60;
+			id=57;
 			side="EMPTY";
 			vehicle="C_Offroad_01_F";
 			lock="UNLOCKED";
 			skill=0.60000002;
 			text="Pickup1";
-			init="BombTruckSpotted = false; this setVariable [""SpottingDistance"", 200]; IED11 attachTo [Pickup1, [0.31,-1,-0.3]]; IED12 attachTo [Pickup1,[0.28,-1.5,-0.3]]; IED13 attachTo [Pickup1, [0.35,-2.1,-0.3]]; IED14 attachTo [Pickup1, [0.32,-2.6,-0.3]]; IED15 attachTo [Pickup1, [-0.3,-1,-0.3]]; IED16 attachTo [Pickup1, [-0.33,-1.5,-0.3]]; IED17 attachTo [Pickup1, [-0.29,-2.04,-0.3]]; IED18 attachTo [Pickup1, [-0.3,-2.5,-0.3]]; ";
+			init="BombSpotted = false; this setVariable [""SpottingDistance"", 200]; this lockCargo true; IED11 attachTo [Pickup1, [0.31,-1,-0.3]]; IED12 attachTo [Pickup1,[0.28,-1.5,-0.3]]; IED13 attachTo [Pickup1, [0.35,-2.1,-0.3]]; IED14 attachTo [Pickup1, [0.32,-2.6,-0.3]]; IED15 attachTo [Pickup1, [-0.3,-1,-0.3]]; IED16 attachTo [Pickup1, [-0.33,-1.5,-0.3]]; IED17 attachTo [Pickup1, [-0.29,-2.04,-0.3]]; IED18 attachTo [Pickup1, [-0.3,-2.5,-0.3]]; ";
 		};
 		class Item8
 		{
 			position[]={5087.0063,73.512573,16150.078};
 			azimut=177.354;
-			id=61;
+			id=58;
 			side="EMPTY";
 			vehicle="I_MRAP_03_hmg_F";
 			lock="LOCKEDPLAYER";
@@ -1098,19 +1333,18 @@ class Mission
 		};
 		class Item9
 		{
-			position[]={5075.3589,28.058035,16674.689};
+			position[]={5077.4873,27.671785,16665.293};
 			azimut=-128.144;
-			id=62;
+			id=59;
 			side="EMPTY";
 			vehicle="Land_CanisterPlastic_F";
 			skill=0.60000002;
-			init="this addEventHandler [     ""HandleDamage"",     {hint ""gotcha!""}];";
 		};
 		class Item10
 		{
 			position[]={5081.1318,26.11808,16627.459};
 			azimut=-40.032608;
-			id=63;
+			id=60;
 			side="EMPTY";
 			vehicle="Land_CncBarrierMedium_F";
 			skill=0.60000002;
@@ -1118,8 +1352,9 @@ class Mission
 		class Item11
 		{
 			position[]={5077.7817,104.40179,15675.878};
-			azimut=397.12073;
-			id=64;
+			azimut=397.121;
+			special="NONE";
+			id=61;
 			side="EMPTY";
 			vehicle="I_MRAP_03_hmg_F";
 			lock="UNLOCKED";
@@ -1128,9 +1363,10 @@ class Mission
 		};
 		class Item12
 		{
-			position[]={5093.395,105.52905,15688.249};
+			position[]={5107.29,104.47762,15676.42};
 			azimut=499.89999;
-			id=65;
+			special="NONE";
+			id=62;
 			side="EMPTY";
 			vehicle="I_MRAP_03_hmg_F";
 			lock="UNLOCKED";
@@ -1141,7 +1377,7 @@ class Mission
 		{
 			position[]={5082.1221,27.674616,16665.826};
 			azimut=-128.144;
-			id=66;
+			id=63;
 			side="EMPTY";
 			vehicle="Land_CanisterPlastic_F";
 			skill=0.60000002;
@@ -1150,11 +1386,12 @@ class Mission
 		};
 		class Item14
 		{
-			position[]={5068.1328,27.429146,16656.402};
-			azimut=141.50662;
-			id=67;
+			position[]={5065.6343,27.437206,16657.365};
+			azimut=141.507;
+			special="NONE";
+			id=64;
 			side="EMPTY";
-			vehicle="C_SUV_01_F";
+			vehicle="C_Van_01_transport_F";
 			lock="UNLOCKED";
 			skill=0.60000002;
 		};
@@ -1162,9 +1399,36 @@ class Mission
 		{
 			position[]={5083.5645,27.188534,16643.689};
 			azimut=280.6517;
-			id=68;
+			id=65;
 			side="EMPTY";
 			vehicle="C_Quadbike_01_F";
+			skill=0.60000002;
+		};
+		class Item16
+		{
+			position[]={5075.4614,27.767258,16667.408};
+			azimut=-38.27766;
+			id=66;
+			side="EMPTY";
+			vehicle="Land_CanisterPlastic_F";
+			skill=0.60000002;
+		};
+		class Item17
+		{
+			position[]={5076.144,27.728607,16666.533};
+			azimut=-189.2545;
+			id=67;
+			side="EMPTY";
+			vehicle="Land_CanisterPlastic_F";
+			skill=0.60000002;
+		};
+		class Item18
+		{
+			position[]={5076.6982,27.700895,16665.914};
+			azimut=-218.97014;
+			id=68;
+			side="EMPTY";
+			vehicle="Land_CanisterPlastic_F";
 			skill=0.60000002;
 		};
 	};
@@ -1224,7 +1488,7 @@ class Mission
 	};
 	class Sensors
 	{
-		items=23;
+		items=29;
 		class Item0
 		{
 			position[]={5076.376,27.667219,16665.129};
@@ -1235,7 +1499,7 @@ class Mission
 			repeating=1;
 			interruptable=1;
 			age="UNKNOWN";
-			expActiv="player setVariable [""BombActivated"", true, true]";
+			expActiv="BombActivated = true; publicVariable ""BombActivated"";";
 			class Effects
 			{
 			};
@@ -1245,10 +1509,11 @@ class Mission
 			position[]={5074.4785,27.766106,16667.318};
 			a=0;
 			b=0;
+			repeating=1;
 			interruptable=1;
 			age="UNKNOWN";
 			text="Enable radio trigger";
-			expCond="!BombActivated";
+			expCond="alive Pickup1";
 			expActiv="1 setRadioMsg ""Activate bomb""";
 			expDesactiv="1 setRadioMsg ""NULL""";
 			class Effects
@@ -1257,7 +1522,7 @@ class Mission
 		};
 		class Item2
 		{
-			position[]={5101.6494,73.6661,16146.249};
+			position[]={5107.9766,73.793411,16149.143};
 			a=80;
 			b=80;
 			interruptable=1;
@@ -1330,11 +1595,12 @@ class Mission
 			b=5;
 			activationBy="STATIC";
 			activationType="NOT PRESENT";
+			repeating=1;
 			interruptable=1;
 			age="UNKNOWN";
 			idStatic=1069853;
 			idObject=-1073431779;
-			expActiv="player setVariable [""RadioTower2Destroyed"", true ,true];";
+			expActiv="RadioTower2Destroyed = true; publicVariable ""RadioTower2Destroyed"";";
 			class Effects
 			{
 			};
@@ -1346,82 +1612,70 @@ class Mission
 			b=5;
 			activationBy="STATIC";
 			activationType="NOT PRESENT";
+			repeating=1;
 			interruptable=1;
 			age="UNKNOWN";
 			idStatic=1069851;
 			idObject=-1071332581;
-			expActiv="player setVariable [""RadioTower1Destroyed"", true ,true];";
+			expActiv="RadioTower1Destroyed = true; publicVariable ""RadioTower1Destroyed"";";
 			class Effects
 			{
 			};
 		};
 		class Item9
 		{
-			position[]={4563.2915,263.87335,15366.433};
-			a=0;
-			b=0;
-			age="UNKNOWN";
-			text="Win outr";
-			expCond="RadioTower1Destroyed and RadioTower2Destroyed";
-			class Effects
-			{
-				track="LeadTrack03_F";
-				titleType="TEXT";
-				title="Job done! Communications have been cut off.";
-			};
-		};
-		class Item10
-		{
 			position[]={4563.4805,262.70435,15362.358};
 			a=0;
 			b=0;
-			timeoutMin=9;
-			timeoutMid=9;
-			timeoutMax=9;
+			timeoutMin=8;
+			timeoutMid=8;
+			timeoutMax=8;
 			age="UNKNOWN";
 			text="Win";
 			expCond="RadioTower1Destroyed and RadioTower2Destroyed";
 			expActiv="""end1"" call BIS_fnc_endMission;";
 			class Effects
 			{
-				track="LeadTrack03_F";
-				titleEffect="BLACK";
 			};
 		};
-		class Item11
+		class Item10
 		{
 			position[]={4571.0669,263.03497,15366.338};
 			a=0;
 			b=0;
+			timeoutMin=4;
+			timeoutMid=4;
+			timeoutMax=4;
 			interruptable=1;
 			age="UNKNOWN";
 			text="Lose outro";
-			expCond="!alive Pickup1 and (!RadioTower1Destroyed or !RadioTower2Destroyed)";
+			expCond="(!alive Pickup1) and (!RadioTower1Destroyed or !RadioTower2Destroyed)";
 			class Effects
 			{
+				track="$STOP$";
 				titleType="TEXT";
-				titleEffect="WHITE OUT";
-				title="Blast! The bomb didn't make it to the towers.";
+				title="Blast! The bomb didn't reach the towers!";
 			};
 		};
-		class Item12
+		class Item11
 		{
 			position[]={4571.0664,261.86194,15362.447};
 			a=0;
 			b=0;
-			timeoutMin=9;
-			timeoutMid=9;
-			timeoutMax=9;
+			timeoutMin=15;
+			timeoutMid=15;
+			timeoutMax=15;
+			interruptable=1;
 			age="UNKNOWN";
 			text="Lose";
-			expCond="!alive Pickup1 and (!RadioTower1Destroyed or !RadioTower2Destroyed)";
-			expActiv="""LOSER"" call BIS_fnc_failMission;";
+			expCond="(!alive Pickup1) and (!RadioTower1Destroyed or !RadioTower2Destroyed)";
+			expActiv="""LOSER"" call BIS_fnc_endMission;";
 			class Effects
 			{
 				track="AmbientTrack01_F";
 			};
 		};
-		class Item13
+		class Item12
 		{
 			position[]={5044.7881,28.346123,16676.834};
 			a=0;
@@ -1431,44 +1685,46 @@ class Mission
 			interruptable=1;
 			age="UNKNOWN";
 			text="AAF close enough to spot weapons";
-			expCond="({faction _x == ""IND_F"" and (_x knowsAbout player) > 1} count ((position player) nearEntities (player getVariable [""SpottingDistance"", 100]) )) > 0";
+			expCond="({faction _x == ""IND_F"" and (_x knowsAbout player) > 0} count ((position player) nearEntities (player getVariable [""SpottingDistance"", 100]) )) > 0";
 			expActiv="PlayerWeaponsSpotted = true; publicVariable ""PlayerWeaponsSpotted""; SpotPosition = position player; publicVariable ""SpotPosition"";";
 			class Effects
 			{
 			};
 		};
-		class Item14
+		class Item13
 		{
-			position[]={5043.3862,27.30196,16658.535};
+			position[]={5044.7705,28.180252,16671.961};
 			a=0;
 			b=0;
 			interruptable=1;
 			type="SWITCH";
 			age="UNKNOWN";
 			text="Player weapons spotted!";
-			expCond="PlayerWeaponsSpotted";
+			expCond="false and PlayerWeaponsSpotted";
 			expActiv="{_x setCaptive false} forEach units group player;";
 			class Effects
 			{
+				sound="Alarm_Independent";
+				track="LeadTrack01_F";
 				titleType="TEXT";
-				title="AAF forces have seen our weapons! Expect trouble!";
+				title="AAF forces have identified us! Expect trouble!";
 			};
 		};
-		class Item15
+		class Item14
 		{
-			position[]={5051.5342,29.186049,16691.268};
+			position[]={5049.2441,29.135544,16690.883};
 			a=0;
 			b=0;
 			interruptable=1;
 			age="UNKNOWN";
 			text="Game start";
 			expCond="true";
-			expActiv="{_x setCaptive true; _x setVariable [""SpottingDistance"", 150];} forEach units group player";
+			expActiv="{_x setCaptive true; _x setVariable [""SpottingDistance"", 150];} forEach units group player; PlayerWeaponsSpotted  = false; BombSpotted = false; ";
 			class Effects
 			{
 			};
 		};
-		class Item16
+		class Item15
 		{
 			position[]={5083.6973,103.36458,15665};
 			a=0;
@@ -1476,13 +1732,13 @@ class Mission
 			interruptable=1;
 			age="UNKNOWN";
 			text="Calling in Reserves";
-			expCond="PlayerWeaponsSpotted or BombSpotted";
-			expActiv="null = [Reserves, SpotPosition] execVM ""searchAndDestroy.sqf""; player globalChat format [""%1 executing search and destroy at position %2"", Reserves, SpotPosition]";
+			expCond="PlayerWeaponsSpotted";
+			expActiv="null = [Reserves, true, SpotPosition, ""SAD"", ""RED"", ""AWARE"", ""FULL"", ""LINE""] execVM ""addWaypoint.sqf"";";
 			class Effects
 			{
 			};
 		};
-		class Item17
+		class Item16
 		{
 			position[]={4394.5903,99.529701,15826.432};
 			a=0;
@@ -1491,40 +1747,40 @@ class Mission
 			age="UNKNOWN";
 			text="SAD when players spotted";
 			expCond="PlayerWeaponsSpotted or BombSpotted";
-			expActiv="null = [WesternRoadblock, SpotPosition] execVM ""searchAndDestroy.sqf""; player globalChat format [""%1 executing search and destroy at position %2"", WesternRoadblock, SpotPosition]";
+			expActiv="null = [WesternRoadblock, true, SpotPosition, ""SAD"", ""RED"", ""AWARE"", ""FULL"", ""COLUMN""] execVM ""addWaypoint.sqf"";";
 			class Effects
 			{
 			};
 		};
-		class Item18
+		class Item17
 		{
-			position[]={5122.5405,75.650528,16125.543};
+			position[]={5084.3994,78.705055,16136.93};
 			a=0;
 			b=0;
 			interruptable=1;
 			age="UNKNOWN";
 			text="SAD when players or bomb spotted";
 			expCond="PlayerWeaponsSpotted or BombSpotted";
-			expActiv="null = [EasternRoadblockCrew, SpotPosition] execVM ""searchAndDestroy.sqf""; player globalChat format [""%1 executing search and destroy at position %2"", EasternRoadblockCrew, SpotPosition]";
+			expActiv="null = [EasternRoadblockCrew, true, SpotPosition, ""SAD"", ""RED"", ""AWARE"", ""FULL"", ""LINE""] execVM ""addWaypoint.sqf"";";
+			class Effects
+			{
+			};
+		};
+		class Item18
+		{
+			position[]={4536.0586,263.57471,15433.363};
+			a=0;
+			b=0;
+			interruptable=1;
+			age="UNKNOWN";
+			text="SAD if alerted";
+			expCond="PlayerWeaponsSpotted";
+			expActiv="null = [TowerCrew, true, position this, ""SAD"", ""RED"", ""AWARE"", ""FULL"", ""LINE""] execVM ""addWaypoint.sqf"";";
 			class Effects
 			{
 			};
 		};
 		class Item19
-		{
-			position[]={4550.7773,262.49054,15426.603};
-			a=0;
-			b=0;
-			interruptable=1;
-			age="UNKNOWN";
-			text="Player weapons spotted";
-			expCond="PlayerWeaponsSpotted or BombSpotted";
-			expActiv="null = [TowerCrew, position this] execVM ""searchAndDestroy.sqf""; player globalChat format [""%1 executing search and destroy at position %2"", TowerCrew, position this]";
-			class Effects
-			{
-			};
-		};
-		class Item20
 		{
 			position[]={5051.5234,28.238888,16676.729};
 			a=0;
@@ -1534,13 +1790,13 @@ class Mission
 			interruptable=1;
 			age="UNKNOWN";
 			text="AAF close enough to spot bomb";
-			expCond="({faction _x == ""IND_F"" and (_x knowsAbout Pickup1) > 1} count ((position Pickup1) nearEntities (Pickup1 getVariable [""SpottingDistance"", 200]) )) > 0";
+			expCond="({faction _x == ""IND_F"" and (_x knowsAbout Pickup1) > 0} count ((position Pickup1) nearEntities (Pickup1 getVariable [""SpottingDistance"", 200]) )) > 0";
 			expActiv="BombSpotted = true; publicVariable ""BombSpotted""; SpotPosition = position Pickup1; publicVariable ""SpotPosition"";";
 			class Effects
 			{
 			};
 		};
-		class Item21
+		class Item20
 		{
 			position[]={5591.9858,21.609215,14854.286};
 			a=0;
@@ -1549,12 +1805,12 @@ class Mission
 			age="UNKNOWN";
 			text="Calling in MotorizedReserves";
 			expCond="PlayerWeaponsSpotted or BombSpotted";
-			expActiv="null = [MotorizedReserves, SpotPosition] execVM ""searchAndDestroy.sqf""; player globalChat format [""%1 executing search and destroy at position %2"", MotorizedReserves, SpotPosition]";
+			expActiv="null = [MotorizedReserves, true, SpotPosition, ""SAD"", ""RED"", ""AWARE"", ""FULL"", ""LINE""] execVM ""addWaypoint.sqf"";";
 			class Effects
 			{
 			};
 		};
-		class Item22
+		class Item21
 		{
 			position[]={5272.9336,92.233727,16009.266};
 			a=0;
@@ -1563,7 +1819,110 @@ class Mission
 			age="UNKNOWN";
 			text="Calling in patrol";
 			expCond="PlayerWeaponsSpotted or BombSpotted";
-			expActiv="null = [Patrol, SpotPosition] execVM ""searchAndDestroy.sqf""; player globalChat format [""%1 executing search and destroy at position %2"", Patrol, SpotPosition]";
+			expActiv="null = [Patrol, true, SpotPosition, ""SAD"", ""RED"", ""AWARE"", ""FULL"", ""LINE""] execVM ""addWaypoint.sqf"";";
+			class Effects
+			{
+			};
+		};
+		class Item22
+		{
+			position[]={5051.9238,28.152693,16672.316};
+			a=0;
+			b=0;
+			interruptable=1;
+			type="SWITCH";
+			age="UNKNOWN";
+			text="Bomb spotted!";
+			expCond="BombSpotted";
+			expActiv="{_x setCaptive false} forEach units group player; Pickup1 addRating -10000";
+			class Effects
+			{
+				sound="Alarm_Independent";
+				track="LeadTrack05_F";
+				titleType="TEXT";
+				title="They've seen the bomb! This is bad!!";
+			};
+		};
+		class Item23
+		{
+			position[]={4563.9829,263.80777,15366.255};
+			a=0;
+			b=0;
+			age="UNKNOWN";
+			text="Win";
+			expCond="RadioTower1Destroyed and RadioTower2Destroyed";
+			class Effects
+			{
+				track="LeadTrack05_F";
+			};
+		};
+		class Item24
+		{
+			position[]={4595.6172,259.14038,15374.718};
+			a=0;
+			b=0;
+			interruptable=1;
+			type="SWITCH";
+			age="UNKNOWN";
+			text="Game init";
+			expCond="true";
+			expActiv="RadioTower1Destroyed = false; RadioTower2Destroyed = false;";
+			class Effects
+			{
+			};
+		};
+		class Item25
+		{
+			position[]={5088.1436,102.99023,15661.221};
+			a=0;
+			b=0;
+			interruptable=1;
+			age="UNKNOWN";
+			text="Calling in Reserves";
+			expCond="BombSpotted";
+			expActiv="null = [Reserves, true, position Pickup1, ""DESTROY"", ""RED"", ""AWARE"", ""FULL"", ""LINE""] execVM ""addWaypoint.sqf"";";
+			class Effects
+			{
+			};
+		};
+		class Item26
+		{
+			position[]={4542.0737,263.18045,15427.766};
+			a=0;
+			b=0;
+			interruptable=1;
+			age="UNKNOWN";
+			text="SAD if alerted";
+			expCond="BombSpotted";
+			expActiv="null = [TowerCrew, true, position Pickup1, ""Destroy"", ""RED"", ""AWARE"", ""FULL"", ""LINE""] execVM ""addWaypoint.sqf"";";
+			class Effects
+			{
+			};
+		};
+		class Item27
+		{
+			position[]={4621.3633,244.89761,15472.72};
+			a=0;
+			b=0;
+			interruptable=1;
+			age="UNKNOWN";
+			text="Destroy bomb truck if spotted";
+			expCond="BombSpotted";
+			expActiv="null = [OPSentry, true, position Pickup1, ""Destroy"", ""RED"", ""AWARE"", ""FULL"", ""LINE""] execVM ""addWaypoint.sqf""; ";
+			class Effects
+			{
+			};
+		};
+		class Item28
+		{
+			position[]={4619.3857,243.14877,15483.002};
+			a=0;
+			b=0;
+			interruptable=1;
+			age="UNKNOWN";
+			text="Sentry if players spotted";
+			expCond="PlayerWeaponsSpotted";
+			expActiv="null = [OPSentry, true, position this, ""SENTRY"", ""RED"", ""AWARE""] execVM ""addWaypoint.sqf"";";
 			class Effects
 			{
 			};

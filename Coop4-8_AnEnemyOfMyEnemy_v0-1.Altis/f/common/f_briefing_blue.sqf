@@ -21,7 +21,7 @@
 
 _cre = player createDiaryRecord ["diary", ["Credits","
 <br/>
-This mission is part of the XYZ campaign
+This mission is episode 1 of the Operation Giraffe campaign.
 <br/><br/>
 Mission made by EsotericReverie for the RPS ArmA 3 community.
 <br/><br/>
@@ -49,11 +49,11 @@ When both radio masts are gone and the local AAF bastards are cut off from the m
 
 _sit = player createDiaryRecord ["diary", ["Time to strike!","
 <br/>
-Okay chaps, listen up! We have been in contact with NATO people and worked out a plan to help them approach our island and take the port down in <marker name=KavalaMarker>Kavala</marker>. They'll be moving in under the cover of darkness, but before they do, we must make sure that word of the attack won't easily spread.
+Okay chaps, listen up! We have been in contact with NATO people and worked out a plan to help them approach our island and take the port down in <marker name=MarkerKavala>Kavala</marker>. They'll be moving in under the cover of darkness, but before they do, we must make sure that word of the attack won't easily spread.
 <br/><br/>
 To do this, we will hit the radio station at the top of <marker name=MarkerMagos>mount Magos</marker> Apostolos and Georgios have been preparing the bombs at the <marker=MarkerSafeHouse>safe house</marker>. The bombs are rigged for radio activation, and have been loaded into a truck there.
 <br/><br/>
-We've seen AAF soldiers patrolling the summit, and the road up there, so we must be ready to fight or sneak past them to get to the radio station.
+We've seen AAF soldiers patrolling <marker name=MarkerMagos>the summit</marker>, and the road up there, so we must be ready to fight or sneak past them to get to the radio station. They also usually have a roadblock set up at the <marker name=MarkerRoadblock>eastern end of Negosa</marker>.
 <br/><br/>
 They have much better equipment than us, and we'll have trouble in a straight up fight, so we have to fight smart!
 "]];
